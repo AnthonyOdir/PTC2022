@@ -74,17 +74,11 @@ namespace ProyectoPTC2022
             retorno = comando.ExecuteNonQuery();
             return retorno;
         }
-        public static int asistencia(int llave, int entradas, string usuario)//Crea los registros de asistencias
+
+        public static int insertar(int llave, string usuario, double precio, string nombreCarro)//Inserta la venta en la tabla de ventas
         {
             int retorno = 0;
-            MySqlCommand cmd = new MySqlCommand(String.Format("Insert INTO asistencias (Codigo_QR, Cantidad_Entradas, Usuario) values('{0}', '{1}', '{2}')", llave.ToString(), entradas.ToString(), usuario), MCompra.ObtenerConexion());
-            retorno = cmd.ExecuteNonQuery();
-            return retorno;
-        }
-        public static int insertar(int llave, int entradas, string usuario, double precio, string nombreEvento)//Inserta la venta en la tabla de ventas
-        {
-            int retorno = 0;
-            MySqlCommand insertar = new MySqlCommand(String.Format("Insert Into ventas (Comprador, Valor_Compra, Cantidad_Asientos, N_Tarjeta, Llave_Codigo, Evento) values('{0}', '{1}', '{2}', '4-38582-836800-0982', '{3}','{4}')", usuario, precio.ToString(), entradas.ToString(), llave.ToString(), nombreEvento), MCompra.ObtenerConexion());
+            MySqlCommand insertar = new MySqlCommand(String.Format("Insert Into ventas (Comprador, Valor_Compra, N_Tarjeta, Llave_Codigo, Evento) values('{0}', '{1}', '{2}', '4-38582-836800-0982', '{3}','{4}')", usuario, precio.ToString(), llave.ToString(), nombreCarro), MCompra.ObtenerConexion());
 
             retorno = insertar.ExecuteNonQuery();
 
@@ -116,6 +110,15 @@ namespace ProyectoPTC2022
             var cmd = "Update eventos Set Ausentes = Ausentes+ " + entradas + " where Nombre_Evento='" + nombreEvento + "'";
             MySqlCommand cmdestadisticas = new MySqlCommand(cmd, ObtenerConexion());
             retorno = cmdestadisticas.ExecuteNonQuery();
+            return retorno;
+        }
+        public static int Compra(string id_usuario, double pago, string id_carro, string tarjeta)//Inserta la venta en la tabla de ventas
+        {
+            int retorno = 0;
+            MySqlCommand insertar = new MySqlCommand(String.Format("Insert Into Compra (id_usuario, pago, id_carro, tarjeta) values('{0}', '{1}', '{2}', '{3}')", id_usuario, pago.ToString(), id_carro.ToString(), tarjeta), MCompra.ObtenerConexion());
+
+            retorno = insertar.ExecuteNonQuery();
+
             return retorno;
         }
     }

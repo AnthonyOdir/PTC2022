@@ -55,10 +55,6 @@
 		             <asp:TextBox ID="vence" runat="server" placeholder="00  /  00" data-mask="00  /  00"  onkeypress="return event.charCode >= 48 && event.charCode <= 57"></asp:TextBox>
 				     <asp:Label ID="Label4" runat="server" Text="CVC"></asp:Label>
 	                 <asp:TextBox ID="codigo" placeholder="000" data-mask="000" runat="server"  onkeypress="return event.charCode >= 48 && event.charCode <= 57"></asp:TextBox>
-				     <asp:DropDownList ID="Lista_Eventos" runat="server"></asp:DropDownList>
-				     <br />
-				     <label class="label"> Quantity of tickets </label>
-	                 <asp:TextBox ID="txtCantidad" runat="server" data-mask="0000" ></asp:TextBox>
                      <asp:Button ID="btnBuy_Click" runat="server" Text="Purchase" OnClick="btnBuy_Click_Click" />
                      
                      <asp:Literal runat="server" ID ="alert" Text=""></asp:Literal>
