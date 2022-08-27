@@ -11,7 +11,7 @@ namespace ProyectoPTC2022
 {
 
 
-    public partial class _default
+    public partial class defaultcliente
     {
 
         /// <summary>
