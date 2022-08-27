@@ -68,9 +68,7 @@
               <li class="nav-item">
                 <a class="nav-link" href="Sobre_Nosotros.aspx">Sobre Nosotros </a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="Pago.aspx">Comprar </a>
-              <li
+            </ul>
           </div>
         </nav>
       </div>
