@@ -159,8 +159,8 @@ a:focus {
 
 .custom_nav-container {
   padding: 0;
-    top: 0px;
-    left: 0px;
+    top: -1px;
+    left: 1px;
 }
 
 .custom_nav-container .navbar-nav {
