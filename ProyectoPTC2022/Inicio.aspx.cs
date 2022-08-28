@@ -14,10 +14,10 @@ namespace ProyectoPTC2022
         {
             localStorageLiteral.Text =
                 "<script>" +
-                $"const userName = {JsLocalStorage.getItem("userName")}" +
-                $"const isAdmin = {JsLocalStorage.getItem("isAdmin")}" +
-                $"if(!userName) {{{JsService.ReplaceLocation("Login2.aspx")}}}" +
-                $"if(isAdmin != 1) {{{JsService.ReplaceLocation("defaultcliente.aspx")}}}" +
+                    $"const userName = {JsLocalStorage.getItem("userName")}" +
+                    $"const isAdmin = {JsLocalStorage.getItem("isAdmin")}" +
+                    $"if(!userName) {{{JsService.ReplaceLocation("Login2.aspx")}}}" +
+                    $"if(isAdmin != 1) {{{JsService.ReplaceLocation("defaultcliente.aspx")}}}" +
                 "</script>";
             cargarCarrusel();
         }
@@ -43,6 +43,7 @@ namespace ProyectoPTC2022
                         JsLocalStorage.Clear() +
                         JsService.ReplaceLocation("Login2.aspx") +
                     "</script>";
+            Session.Clear();
         }
 
         protected void cargarCarrusel()

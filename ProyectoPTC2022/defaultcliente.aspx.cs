@@ -32,6 +32,7 @@ namespace ProyectoPTC2022
                         JsLocalStorage.Clear() +
                         JsService.ReplaceLocation("Login2.aspx") +
                     "</script>";
+            Session.Clear();
         }
         protected void cargarCarrusel()
         {

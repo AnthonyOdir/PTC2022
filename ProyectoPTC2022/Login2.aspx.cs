@@ -52,7 +52,7 @@ namespace ProyectoPTC2022
                         "if("+ isAdmin + " != 1) { " + JsService.ReplaceLocation("defaultcliente.aspx") + "}" +
                         "else { "+ JsService.ReplaceLocation("Inicio.aspx") + " }" +
                     "</script>";
-
+                    Session["userId"] = id.ToString();
                 }
                 else
                 {

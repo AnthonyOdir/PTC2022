@@ -11,7 +11,6 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css"/>
 
 
-    <script src="JavaScript/sweetalert2.all.min.js"></script>
  
 
     <style type="text/css">
@@ -56,11 +55,19 @@
 				<asp:Label ID="Label4" runat="server" Text="CVC"></asp:Label>
 	            <asp:TextBox ID="codigo" placeholder="000" data-mask="000" runat="server"  onkeypress="return event.charCode >= 48 && event.charCode <= 57"></asp:TextBox>
                 <asp:Button ID="btnBuy_Click" runat="server" Text="Purchase" OnClick="btnBuy_Click_Click"/>
-                <asp:Literal runat="server" ID ="alert" Text=""></asp:Literal>
             </div>
         </div>
+        <asp:HiddenField runat="server" id="userId"></asp:HiddenField>
     </form>
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+    <script src="SweetAlert/sweetalert2.all.min.js"></script>
+    <script src="SweetAlert/sweetalert2.js"></script>
+    <asp:Literal runat="server" ID ="alert" Text=""></asp:Literal>
+  <asp:Literal ID="localStorageLiteral" runat="server" Text=""></asp:Literal>
+   <script>
+       //Get userId from localStorage and placed it to HiddenLabel
+       document.getElementById("userId").value = window.localStorage.getItem("userId");
+   </script>
 </body>
 </html>

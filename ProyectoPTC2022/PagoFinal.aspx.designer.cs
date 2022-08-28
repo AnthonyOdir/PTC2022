@@ -105,6 +105,15 @@ namespace ProyectoPTC2022
         protected global::System.Web.UI.WebControls.Button btnBuy_Click;
 
         /// <summary>
+        /// Control userId.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField userId;
+
+        /// <summary>
         /// Control alert.
         /// </summary>
         /// <remarks>
@@ -112,5 +121,14 @@ namespace ProyectoPTC2022
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal alert;
+
+        /// <summary>
+        /// Control localStorageLiteral.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal localStorageLiteral;
     }
 }
