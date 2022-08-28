@@ -9,30 +9,21 @@ using System.Text;
 using System.IO;
 using MySql.Data.MySqlClient;
 using System.Data.SqlClient;
+using ProyectoPTC2022.Utils;
 
 namespace ProyectoPTC2022
 {
     public partial class Login2 : System.Web.UI.Page
     {
-        
         protected void Page_Load(object sender, EventArgs e)
         {
-            try
-            {
-                bool logged_in = Convert.ToBoolean(Session["username"]);
-                bool isAdmin = Convert.ToBoolean(Session["isAdmin"]);
-                if (logged_in)
-                {
-                    if (isAdmin)
-                        Response.Redirect("Inicio");
-                    Response.Redirect("defaultcliente");
-                }
-
-            }
-            catch (Exception ex)
-            {
-                Response.Redirect("default.aspx");
-            }
+            localStorageLiteral.Text =
+                "<script>" +
+                $"const userName = {JsLocalStorage.getItem("userName")}" +
+                $"const isAdmin = {JsLocalStorage.getItem("isAdmin")}" +
+                $"if(userName && isAdmin == 1 ){{{JsService.ReplaceLocation("Inicio.aspx")}}}" +
+                $"if(userName) {JsService.ReplaceLocation("defaultcliente.aspx") }" +
+                "</script>";
         }
 
         protected void Unnamed1_Click(object sender, EventArgs e)
@@ -53,20 +44,14 @@ namespace ProyectoPTC2022
                 int isAdmin = Check_Admin(id);
                 if (id != 0)
                 {
-                    Session["username"] = TxtUsuario;
-                    Session["userId"] = id;
-                    Session["isAdmin"] = isAdmin;
-
-                    // 0 = User
-                    if (isAdmin == 0)
-                    {
-                        Response.Redirect("defaultcliente.aspx");
-                    }
-                    else
-                    {
-                        //Not admin
-                        Response.Redirect("Inicio.aspx");
-                    }
+                    localStorageLiteral.Text =
+                    "<script>" +
+                        JsLocalStorage.SetItem("userName", TxtUsuario.Text) + 
+                        JsLocalStorage.SetItem("userId", id.ToString()) +
+                        JsLocalStorage.SetItem("isAdmin", isAdmin.ToString()) +
+                        "if("+ isAdmin + " != 1) { " + JsService.ReplaceLocation("defaultcliente.aspx") + "}" +
+                        "else { "+ JsService.ReplaceLocation("Inicio.aspx") + " }" +
+                    "</script>";
 
                 }
                 else

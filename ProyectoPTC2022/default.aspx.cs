@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProyectoPTC2022.Utils;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -12,6 +13,14 @@ namespace ProyectoPTC2022
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            localStorageLiteral.Text =
+                "<script>" +
+                $"const userName = {JsLocalStorage.getItem("userName")}" +
+                $"const isAdmin = {JsLocalStorage.getItem("isAdmin")}" +
+                $"if(userName && isAdmin == 1) {{{JsService.ReplaceLocation("Inicio.aspx")}}}" +
+                $"if(userName) {JsService.ReplaceLocation("defaultcliente.aspx")}" +
+                "</script>";
+
             cargarCarrusel();
             Load_Products();
         }

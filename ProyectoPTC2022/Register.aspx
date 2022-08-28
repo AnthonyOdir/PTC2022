@@ -48,7 +48,7 @@
             <div class="container">
                 <a class="navbar-brand" href="default.aspx">
             <span>
-              <-- Regresar
+              < Regresar
             </span>
           </a>
                 <div class="signup-content">

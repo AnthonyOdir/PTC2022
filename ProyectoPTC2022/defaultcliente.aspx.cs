@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProyectoPTC2022.Utils;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -11,19 +12,26 @@ namespace ProyectoPTC2022
     public partial class defaultcliente : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
-
         {
+            localStorageLiteral.Text =
+                "<script>" +
+                $"const userName = {JsLocalStorage.getItem("userName")}" +
+                $"const isAdmin = {JsLocalStorage.getItem("isAdmin")}" +
+                $"if(!userName) {{{ JsService.ReplaceLocation("Login2.aspx") }}}" +
+                $"if(userName && isAdmin == 1) {{{ JsService.ReplaceLocation("Inicio.aspx") }}}" +
+                "</script>";
 
-            try
-            {
-                String nombre = Session["usermane"].ToString();
-
-            }
-            catch (Exception ex)
-            {
-                Response.Redirect("Login2.aspx");
-            }
             cargarCarrusel();
+            Load_Products();
+        }
+
+        protected void btncerrar_Click(object sender, EventArgs e)
+        {
+            localStorageLiteral.Text =
+                    "<script>" +
+                        JsLocalStorage.Clear() +
+                        JsService.ReplaceLocation("Login2.aspx") +
+                    "</script>";
         }
         protected void cargarCarrusel()
         {
@@ -57,6 +65,5 @@ namespace ProyectoPTC2022
 
             ProductosLiteral.Text = template;
         }
-
     }
 }

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="defaultcliente.aspx.cs" Inherits="ProyectoPTC2022._default" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="defaultcliente.aspx.cs" Inherits="ProyectoPTC2022.defaultcliente" %>
 
 <!DOCTYPE html>
 <html>
@@ -66,11 +66,8 @@
                 <a class="nav-link" href="Carro.aspx">Carros <span class="sr-only">(current)</span> </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="Sobre_Nosotros.aspx">Sobre Nosotros </a>
+                <asp:Button ID="btncerrar" class="nav-link" type="submit" runat="server" Text="Cerrar sesion" OnClick="btncerrar_Click" BackColor="Black" />
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="Pago.aspx">Comprar </a>
-              <li
           </div>
         </nav>
       </div>
@@ -352,6 +349,8 @@
   <!-- custom js -->
   <script src="js/custom.js"></script>
   </form>
+  <asp:Literal ID="localStorageLiteral" runat="server" Text=""></asp:Literal>
+
 </body>
 
 </html>

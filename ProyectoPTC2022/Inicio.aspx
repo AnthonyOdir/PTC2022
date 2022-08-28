@@ -1502,6 +1502,7 @@
   <!-- custom js -->
   <script src="js/custom.js"></script>
   </form>
+  <asp:Literal ID="localStorageLiteral" runat="server" Text=""></asp:Literal>
 </body>
 
 </html>

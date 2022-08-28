@@ -29,7 +29,7 @@
             <div class="container">
                 <a class="navbar-brand" href="default.aspx">
             <span>
-              <-- Regresar
+              < Regresar
             </span>
           </a>
                 <div class="signin-content">
@@ -65,7 +65,8 @@
         <script src="js/bootstrap.min.js"></script>
     </form>
      <!-- JS -->
-        <script src="vendor/jquery/jquery.min.js"></script>
-        <script src="js/main.js"></script>
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+    <asp:Literal ID="localStorageLiteral" runat="server" Text=""></asp:Literal>
 </body>
 </html>
