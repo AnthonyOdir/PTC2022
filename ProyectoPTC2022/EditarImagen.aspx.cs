@@ -1,4 +1,5 @@
 ﻿using ProyectoPTC2022;
+using ProyectoPTC2022.Utils;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -14,15 +15,13 @@ namespace ProyectoPTC2022
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            try
-            {
-                String nombre = Session["usermane"].ToString();
-
-            }
-            catch (Exception ex)
-            {
-                Response.Redirect("Login.aspx");
-            }
+            localStorageLiteral.Text =
+                "<script>" +
+                    $"const userName = {JsLocalStorage.getItem("userName")}" +
+                    $"const isAdmin = {JsLocalStorage.getItem("isAdmin")}" +
+                    $"if(!userName) {{{JsService.ReplaceLocation("Login2.aspx")}}}" +
+                    $"if(isAdmin != 1) {{{JsService.ReplaceLocation("defaultcliente.aspx")}}}" +
+                "</script>";
             cargar_datos();
         }
 

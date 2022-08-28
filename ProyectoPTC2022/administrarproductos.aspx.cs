@@ -1,4 +1,5 @@
 ﻿using ProyectoPTC2022;
+using ProyectoPTC2022.Utils;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -15,19 +16,14 @@ namespace ProyectoPTC2022
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            try
-            {
-                bool logged_in = Convert.ToBoolean(Session["logged_in"]);
-                bool isAdmin = Convert.ToBoolean(Session["isAdmin"]);
+            localStorageLiteral.Text =
+                "<script>" +
+                    $"const userName = {JsLocalStorage.getItem("userName")}" +
+                    $"const isAdmin = {JsLocalStorage.getItem("isAdmin")}" +
+                    $"if(!userName) {{{JsService.ReplaceLocation("Login2.aspx")}}}" +
+                    $"if(isAdmin != 1) {{{JsService.ReplaceLocation("defaultcliente.aspx")}}}" +
+                "</script>";
 
-                if (!isAdmin)
-                    Response.Redirect("index");
-
-            }
-            catch (Exception ex)
-            {
-                Response.Redirect("login");
-            }
             Load_Products();
         }
 

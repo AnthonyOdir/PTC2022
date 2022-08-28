@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProyectoPTC2022.Utils;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -12,20 +13,13 @@ namespace ProyectoPTC2022
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            try
-            {
-                bool logged_in = Convert.ToBoolean(Session["logged_in"]);
-                bool isAdmin = Convert.ToBoolean(Session["isAdmin"]);
-
-                if (!isAdmin)
-                    Response.Redirect("index");
-
-            }
-            catch (Exception ex)
-            {
-                Response.Redirect("login");
-            }
-
+            localStorageLiteral.Text =
+                "<script>" +
+                    $"const userName = {JsLocalStorage.getItem("userName")}" +
+                    $"const isAdmin = {JsLocalStorage.getItem("isAdmin")}" +
+                    $"if(!userName) {{{JsService.ReplaceLocation("Login2.aspx")}}}" +
+                    $"if(isAdmin != 1) {{{JsService.ReplaceLocation("defaultcliente.aspx")}}}" +
+                "</script>";
             Load_Sales();
         }
 
@@ -34,22 +28,6 @@ namespace ProyectoPTC2022
             DataTable myTable = conexiones.Get_Sales();
             Sales.DataSource = myTable;
             Sales.DataBind();
-        }
-
-        protected void Search_Click(object sender, EventArgs e)
-        {
-            string QRCode = Code.Text.Trim();
-            if (!string.IsNullOrWhiteSpace(QRCode) && !string.IsNullOrEmpty(QRCode))
-            {
-                DataTable myTable = conexiones.Get_Sale(QRCode);
-                Sale.DataSource = myTable;
-                Sale.DataBind();
-            }
-            else
-            {
-                ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('Debe de ingresar un código');", true);
-            }
-
         }
     }
 }

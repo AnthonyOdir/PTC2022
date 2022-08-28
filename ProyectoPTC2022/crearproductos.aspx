@@ -140,5 +140,6 @@
 
         </div>
     </form>
+  <asp:Literal ID="localStorageLiteral" runat="server" Text=""></asp:Literal>
 </body>
 </html>
