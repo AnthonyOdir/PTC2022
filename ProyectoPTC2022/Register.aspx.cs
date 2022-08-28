@@ -15,12 +15,18 @@ namespace ProyectoPTC2022
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+           if (!IsPostBack)
+                Calendar1.Visible = false;
         }
-        
+
+        protected void Calendar1_SelectionChanged(object sender, EventArgs e)
+        {
+            txtFecha.Text = Calendar1.SelectedDate.ToString();
+        }
+
         protected void Unnamed1_Click(object sender, EventArgs e)
         {
-            if (txtusuario.Text.Trim() != "" && txtclave.Text.Trim() != "" && txtconfirm.Text.Trim() != "" && txtfirst.Text.Trim() != "" && txtapellido.Text.Trim() != "" && txtgmail.Text.Trim() != "" /*&& txtfecha.Text.Trim() != ""*/)
+            if (txtusuario.Text.Trim() != "" && txtclave.Text.Trim() != "" && txtconfirm.Text.Trim() != "" && txtfirst.Text.Trim() != "" && txtapellido.Text.Trim() != "" && txtgmail.Text.Trim() != "" && txtFecha.Text.Trim() != "")
             {
                 if (txtclave.Text == txtconfirm.Text)
                 {
@@ -28,7 +34,7 @@ namespace ProyectoPTC2022
                     string apellido;
                     string usuario;
                     string correo;
-                    //string fecha;
+                    string fecha;
 
                     nombre = txtfirst.Text;
                     apellido = txtapellido.Text;
@@ -37,9 +43,9 @@ namespace ProyectoPTC2022
                     string hashedPassword = Hash_SHA256(txtclave.Text);
                     string confirmPwd = txtusuario.Text.Trim();
                     correo = txtgmail.Text;
-                    //fecha = Calendar1.SelectedDate.ToString();
+                    fecha = Calendar1.SelectedDate.ToString();
 
-                    if (conexiones.UsuariosRepetidos(usuario, hashedPassword, nombre, apellido, correo/*, fecha*/) == 0)
+                    if (conexiones.UsuariosRepetidos(usuario, hashedPassword, nombre, apellido, correo, fecha) == 0)
                     {
                         alerta.Text = "<script>Swal.fire('Registrado con éxito', '¡Gracias por preferirnos!', 'success'); </script>";
 
@@ -85,8 +91,15 @@ namespace ProyectoPTC2022
             {
                 e.Day.IsSelectable = false;
                 e.Cell.ForeColor = System.Drawing.Color.Red;
-                e.Cell.Font.Strikeout = true;
+                e.Cell.Font.Strikeout = true;              
+                e.Day.IsSelectable = false;
+                
             }
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Calendar1.Visible = !Calendar1.Visible;
         }
     }
 }

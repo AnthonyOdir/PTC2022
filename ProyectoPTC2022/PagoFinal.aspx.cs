@@ -107,6 +107,13 @@ namespace ProyectoPTC2022
                     obtenerEstado.Parameters.Add("@Name", MySqlDbType.VarChar);
                     valorEstado = (string)obtenerEstado.ExecuteScalar();
 
+                    //var cmdCantidad = "Select Quantity from productos where ID='" + id_carro + "'";
+                    //MySqlCommand obtenerCantidad = new MySqlCommand(cmdCantidad, conexion);
+                    //string valorCantatidad;
+                    //obtenerCantidad.Parameters.Add("@Name", MySqlDbType.VarChar);
+                    //valorCantatidad = (string)obtenerCantidad.ExecuteScalar();
+
+
                     //Subir información a base de datos
 
                     string usuario = Convert.ToString(Session["userId"]);

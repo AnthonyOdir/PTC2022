@@ -54,7 +54,7 @@
                 <div class="signup-content">
                     <div class="signup-form">
                         <h2 class="form-title">Registrese</h2>
-                        <form method="POST" class="register-form" id="register-form">
+                        <div method="POST" class="register-form" id="register-form">
                             <div class="form-group">
                                 <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
                                  <asp:TextBox ID="txtfirst" runat="server"  placeholder="Nombre" type="text" onpaste="return false" onkeypress="return validar(event)" ></asp:TextBox>
@@ -81,12 +81,14 @@
                                 <asp:TextBox ID="txtgmail" runat="server"  placeholder="Correo" type="email" onpaste="return false"/>
                             </div>
                             <div>
-                            <asp:Calendar ID="Calendar1" runat="server" Height="72px" Width="156px" OnDayRender="Calendar1_DayRender"> </asp:Calendar>
-                           </div>
+                            <asp:Button ID="btnCalendario_Click" runat="server" Text="Calendario" OnClick="Button1_Click" />
+                            <asp:Calendar ID="Calendar1" runat="server" Height="72px" Width="156px" OnDayRender="Calendar1_DayRender" OnSelectionChanged="Calendar1_SelectionChanged"> </asp:Calendar>
+                            <asp:TextBox ID="txtFecha" runat="server"></asp:TextBox></div>
                         <div>
                    </div>
+                            </div>
 
-                        </form>
+                        </div>
                    </div>
                     <div class="signup-image">
                         <figure><img src="images/signup-image.jpg" alt="sing up image"></figure>

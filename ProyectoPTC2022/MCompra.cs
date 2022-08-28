@@ -8,6 +8,7 @@ namespace ProyectoPTC2022
 {
     public class MCompra
     {
+        public static MySqlConnection conexion = new MySqlConnection("Server= 127.0.0.1; database=ptc; Uid=root; pwd=;");
         public static int update(int actualizacion, string cmdUpdate)
         {
             int retorno = 0;
@@ -116,10 +117,38 @@ namespace ProyectoPTC2022
         {
             int retorno = 0;
             MySqlCommand insertar = new MySqlCommand(String.Format("Insert Into Compra (id_usuario, pago, id_carro, modelo, estado, tarjeta) values('{0}', '{1}', '{2}', '{3}', '{4}', '{5}')", id_usuario, pago.ToString(), id_carro.ToString(), modelo, estado, tarjeta), MCompra.ObtenerConexion());
+            MySqlCommand updateInventory = new MySqlCommand("UPDATE productos SET Quantity = (Quantity - @itemsSold) WHERE Id = @itemId;", MCompra.ObtenerConexion());
 
+            updateInventory.Parameters.AddWithValue("@itemId", id_carro);
+            updateInventory.Parameters.AddWithValue("@itemsSold", CantidadDeCarros(id_carro));
+            updateInventory.Prepare();
+
+            int retornoCantidad = CantidadDeCarros(id_carro);
+
+            if (retornoCantidad < 1) 
+            {
+                return retorno;
+            }
+
+            updateInventory.ExecuteNonQuery();
             retorno = insertar.ExecuteNonQuery();
-
             return retorno;
         }
+
+        private static int CantidadDeCarros(string id_carro) 
+        {
+            int cantidad = 0;
+            MySqlCommand cmd = new MySqlCommand(String.Format("SELECT Quantity FROM productos WHERE Id = {0};", id_carro), MCompra.ObtenerConexion()); //Realizamos una selecion de la tabla usuarios.
+            
+            if (cmd.ExecuteScalar() == null)
+            {
+                cantidad = 0;
+            }
+            else
+                cantidad = Convert.ToInt32(cmd.ExecuteScalar());
+            conexion.Close();
+            return cantidad;
+        }
+
     }
 }

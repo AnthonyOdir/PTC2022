@@ -78,6 +78,15 @@ namespace ProyectoPTC2022
         protected global::System.Web.UI.WebControls.TextBox txtgmail;
 
         /// <summary>
+        /// Control btnCalendario_Click.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCalendario_Click;
+
+        /// <summary>
         /// Control Calendar1.
         /// </summary>
         /// <remarks>
@@ -85,6 +94,15 @@ namespace ProyectoPTC2022
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Calendar Calendar1;
+
+        /// <summary>
+        /// Control txtFecha.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtFecha;
 
         /// <summary>
         /// Control olvidaste.

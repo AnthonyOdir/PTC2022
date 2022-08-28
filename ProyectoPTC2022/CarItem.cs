@@ -19,8 +19,7 @@ namespace ProyectoPTC2022
         {
             get { return id_carro; }
             set
-            {
-                // To ensure that the Prod object will be re-created
+            {               // To ensure that the Prod object will be re-created
                 _product = null;
                 id_carro = value;
             }
