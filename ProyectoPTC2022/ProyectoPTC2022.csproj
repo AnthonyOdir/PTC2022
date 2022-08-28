@@ -96,7 +96,7 @@
     <Content Include="CSS\responsive.css" />
     <Content Include="CSS\style.css" />
     <Content Include="default.aspx" />
-    <Content Include="defaultcliente.aspx" />
+    <Content Include="Defaultcliente.aspx" />
     <Content Include="defaultingles.aspx" />
     <Content Include="EditarImagen.aspx" />
     <Content Include="EstilosCss\EstiloInicio.css" />
@@ -224,12 +224,12 @@
     <Compile Include="default.aspx.designer.cs">
       <DependentUpon>default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="defaultcliente.aspx.cs">
-      <DependentUpon>defaultcliente.aspx</DependentUpon>
+    <Compile Include="Defaultcliente.aspx.cs">
+      <DependentUpon>Defaultcliente.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="defaultcliente.aspx.designer.cs">
-      <DependentUpon>defaultcliente.aspx</DependentUpon>
+    <Compile Include="Defaultcliente.aspx.designer.cs">
+      <DependentUpon>Defaultcliente.aspx</DependentUpon>
     </Compile>
     <Compile Include="defaultingles.aspx.cs">
       <DependentUpon>defaultingles.aspx</DependentUpon>

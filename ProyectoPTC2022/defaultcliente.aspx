@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="defaultcliente.aspx.cs" Inherits="ProyectoPTC2022._default" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Defaultcliente.aspx.cs" Inherits="ProyectoPTC2022.Defaultcliente" %>
 
 <!DOCTYPE html>
 <html>
@@ -68,9 +68,7 @@
               <li class="nav-item">
                 <a class="nav-link" href="Sobre_Nosotros.aspx">Sobre Nosotros </a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="Pago.aspx">Comprar </a>
-              <li
+                <asp:Button ID="btncerrar" class="nav-link" type="submit" runat="server" Text="Cerrar sesion" OnClick="btncerrar_Click" />
           </div>
         </nav>
       </div>
@@ -355,4 +353,3 @@
 </body>
 
 </html>
-

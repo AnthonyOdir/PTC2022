@@ -8,15 +8,14 @@ using System.Web.UI.WebControls;
 
 namespace ProyectoPTC2022
 {
-    public partial class defaultcliente : System.Web.UI.Page
+    public partial class Defaultcliente : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
-
         {
 
             try
             {
-                String nombre = Session["usermane"].ToString();
+                String nombre = Session["username"].ToString();
 
             }
             catch (Exception ex)
@@ -58,5 +57,10 @@ namespace ProyectoPTC2022
             ProductosLiteral.Text = template;
         }
 
+        protected void btncerrar_Click(object sender, EventArgs e)
+        {
+            Session.Remove("usermane");
+            Response.Redirect("Login2.aspx");
+        }
     }
 }

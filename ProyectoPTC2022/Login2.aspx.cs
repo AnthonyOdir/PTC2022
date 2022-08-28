@@ -24,8 +24,8 @@ namespace ProyectoPTC2022
                 if (logged_in)
                 {
                     if (isAdmin)
-                        Response.Redirect("Inicio");
-                    Response.Redirect("defaultcliente");
+                        Response.Redirect("Inicio.aspx");
+                    Response.Redirect("Defaultcliente.aspx");
                 }
 
             }
@@ -60,7 +60,7 @@ namespace ProyectoPTC2022
                     // 0 = User
                     if (isAdmin == 0)
                     {
-                        Response.Redirect("defaultcliente.aspx");
+                        Response.Redirect("Defaultcliente.aspx");
                     }
                     else
                     {
