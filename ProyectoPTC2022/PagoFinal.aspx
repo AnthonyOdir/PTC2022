@@ -55,7 +55,7 @@
 		             <asp:TextBox ID="vence" runat="server" placeholder="00  /  00" data-mask="00  /  00"  onkeypress="return event.charCode >= 48 && event.charCode <= 57"></asp:TextBox>
 				     <asp:Label ID="Label4" runat="server" Text="CVC"></asp:Label>
 	                 <asp:TextBox ID="codigo" placeholder="000" data-mask="000" runat="server"  onkeypress="return event.charCode >= 48 && event.charCode <= 57"></asp:TextBox>
-                     <asp:Button ID="btnBuy_Click" runat="server" Text="Purchase" OnClick="btnBuy_Click_Click" />
+                     <asp:Button ID="btnBuy_Click" runat="server" Text="Purchase" OnClick="btnBuy_Click_Click" UseSubmitBehavior="false" />
                      
                      <asp:Literal runat="server" ID ="alert" Text=""></asp:Literal>
                      

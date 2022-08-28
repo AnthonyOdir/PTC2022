@@ -103,7 +103,7 @@ namespace ProyectoPTC2022
                         //Fin del envío del correo
 
                         //Obtener precio de la entrada
-                        string id_carro = Request.QueryString["id"];
+                        string id_carro = Request.QueryString["itemId"];
                         var cmdPrecio = "Select Precio from productos where ID='" + id_carro + "'";
                         MySqlCommand obtenerPrecio = new MySqlCommand(cmdPrecio, conexion);
                         double valorEntrada;
