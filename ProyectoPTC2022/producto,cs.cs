@@ -8,7 +8,7 @@ namespace ProyectoPTC2022
     public class Product
     {
         public int Id { get; set; }
-        public decimal Price { get; set; }
+        public decimal Precio { get; set; }
         public string Description { get; set; }
 
         public Product(int id)
@@ -17,15 +17,15 @@ namespace ProyectoPTC2022
             switch (id)
             {
                 case 1:
-                    this.Price = 19.95m;
+                    this.Precio = 19.95m;
                     this.Description = "Shoes";
                     break;
                 case 2:
-                    this.Price = 9.95m;
+                    this.Precio = 9.95m;
                     this.Description = "Shirt";
                     break;
                 case 3:
-                    this.Price = 14.95m;
+                    this.Precio = 14.95m;
                     this.Description = "Pants";
                     break;
             }

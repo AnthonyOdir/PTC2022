@@ -12,7 +12,7 @@ namespace ProyectoPTC2022
     public class conexiones
     {
         public static MySqlConnection conexion = new MySqlConnection("Server= 127.0.0.1; database=ptc; Uid=root; pwd=;");
-        public static int UsuariosRepetidos(string usuario, string hashedPassword, string nombre, string apellido, string correo/*, string fecha*/)
+        public static int UsuariosRepetidos(string usuario, string hashedPassword, string nombre, string apellido, string correo, string fecha)
         {
             int valor = 0;
             MySqlConnection conexion = datos.ObtenerConexion();
@@ -24,17 +24,17 @@ namespace ProyectoPTC2022
             }
             else
             {
-                conexiones.AgregarUsuario(nombre, apellido, usuario, hashedPassword, correo/*, fecha*/);
+                conexiones.AgregarUsuario(nombre, apellido, usuario, hashedPassword, correo, fecha);
 
             }
             conexion.Close();
             return valor;
         }
         //**************************** Método para los usuario ****************************
-        public static int AgregarUsuario(string nombre, string apellido, string usuario, string hashedPassword, string correo/*, string fecha*/)
+        public static int AgregarUsuario(string nombre, string apellido, string usuario, string hashedPassword, string correo, string fecha)
         {
             int retorno = 0;
-            MySqlCommand comando = new MySqlCommand(string.Format("Insert into usuarios (nombre, apellido, nombre_usuario, password, correo/*, F_nacimiento*/) values ('{0}','{1}','{2}','{3}','{4}'/*,'{5}'*/)", nombre, apellido, usuario, hashedPassword, correo/*, fecha*/), datos.ObtenerConexion());
+            MySqlCommand comando = new MySqlCommand(string.Format("Insert into usuarios (nombre, apellido, nombre_usuario, password, correo, F_nacimiento) values ('{0}','{1}','{2}','{3}','{4}','{5}')", nombre, apellido, usuario, hashedPassword, correo, fecha), datos.ObtenerConexion());
             retorno = comando.ExecuteNonQuery();
 
             return retorno;

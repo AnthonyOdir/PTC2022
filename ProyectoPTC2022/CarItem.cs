@@ -14,15 +14,14 @@ namespace ProyectoPTC2022
         // This property has an implicit getter and setter.
         public int Quantity { get; set; }
 
-        private int _productId;
+        private int id_carro;
         public int ProductId
         {
-            get { return _productId; }
+            get { return id_carro; }
             set
-            {
-                // To ensure that the Prod object will be re-created
+            {               // To ensure that the Prod object will be re-created
                 _product = null;
-                _productId = value;
+                id_carro = value;
             }
         }
 
@@ -45,14 +44,14 @@ namespace ProyectoPTC2022
             get { return Prod.Description; }
         }
 
-        public decimal UnitPrice
+        public decimal Precio
         {
-            get { return Prod.Price; }
+            get { return Prod.Precio; }
         }
 
         public decimal TotalPrice
         {
-            get { return UnitPrice * Quantity; }
+            get { return Precio * Quantity; }
         }
 
         #endregion

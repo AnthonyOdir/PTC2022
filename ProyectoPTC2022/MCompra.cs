@@ -8,6 +8,7 @@ namespace ProyectoPTC2022
 {
     public class MCompra
     {
+        public static MySqlConnection conexion = new MySqlConnection("Server= 127.0.0.1; database=ptc; Uid=root; pwd=;");
         public static int update(int actualizacion, string cmdUpdate)
         {
             int retorno = 0;
@@ -74,49 +75,80 @@ namespace ProyectoPTC2022
             retorno = comando.ExecuteNonQuery();
             return retorno;
         }
-        public static int asistencia(int llave, int entradas, string usuario)//Crea los registros de asistencias
-        {
-            int retorno = 0;
-            MySqlCommand cmd = new MySqlCommand(String.Format("Insert INTO asistencias (Codigo_QR, Cantidad_Entradas, Usuario) values('{0}', '{1}', '{2}')", llave.ToString(), entradas.ToString(), usuario), MCompra.ObtenerConexion());
-            retorno = cmd.ExecuteNonQuery();
-            return retorno;
-        }
-        public static int insertar(int llave, int entradas, string usuario, double precio, string nombreEvento)//Inserta la venta en la tabla de ventas
-        {
-            int retorno = 0;
-            MySqlCommand insertar = new MySqlCommand(String.Format("Insert Into ventas (Comprador, Valor_Compra, Cantidad_Asientos, N_Tarjeta, Llave_Codigo, Evento) values('{0}', '{1}', '{2}', '4-38582-836800-0982', '{3}','{4}')", usuario, precio.ToString(), entradas.ToString(), llave.ToString(), nombreEvento), MCompra.ObtenerConexion());
 
-            retorno = insertar.ExecuteNonQuery();
+        //public static int insertar(int llave, string usuario, double precio, string nombreCarro)//Inserta la venta en la tabla de ventas
+        //{
+        //    int retorno = 0;
+        //    MySqlCommand insertar = new MySqlCommand(String.Format("Insert Into ventas (Comprador, Valor_Compra, N_Tarjeta, Llave_Codigo, Evento) values('{0}', '{1}', '{2}', '4-38582-836800-0982', '{3}','{4}')", usuario, precio.ToString(), llave.ToString(), nombreCarro), MCompra.ObtenerConexion());
 
-            return retorno;
-        }
-        public static int actualizarEntradas(int entradas, string nombreEvento)//Inserta la venta en la tabla de ventas
+        //    retorno = insertar.ExecuteNonQuery();
+
+        //    return retorno;
+        //}
+        //public static int actualizarEntradas(int entradas, string nombreEvento)//Inserta la venta en la tabla de ventas
+        //{
+        //    int retorno = 0;
+        //    var cmd = "Select Entradas_Disponibles from eventos where Nombre_Evento ='" + nombreEvento + "'";
+        //    MySqlCommand cmdActualizarP1 = new MySqlCommand(cmd, ObtenerConexion());
+        //    Int32 cantidadEntradas;
+        //    cmdActualizarP1.Parameters.Add("@Name", MySqlDbType.VarChar);
+        //    cantidadEntradas = (int)cmdActualizarP1.ExecuteScalar();
+        //    int NuevaCantidad = cantidadEntradas - entradas;
+        //    if (NuevaCantidad >= 0)
+        //    {
+        //        var cmd2 = "Update eventos Set Entradas_Disponibles = '" + NuevaCantidad + "' WHERE Nombre_Evento = '" + nombreEvento + "';";
+        //        MySqlCommand cmdActualizarP2 = new MySqlCommand(cmd2, ObtenerConexion());
+        //        retorno = cmdActualizarP2.ExecuteNonQuery();
+        //    }
+        //    return retorno;
+
+        //}
+        //public static int estadisticas(int entradas, string nombreEvento)
+
+        //{
+        //    int retorno;
+
+        //    var cmd = "Update eventos Set Ausentes = Ausentes+ " + entradas + " where Nombre_Evento='" + nombreEvento + "'";
+        //    MySqlCommand cmdestadisticas = new MySqlCommand(cmd, ObtenerConexion());
+        //    retorno = cmdestadisticas.ExecuteNonQuery();
+        //    return retorno;
+        //}
+        public static int Compra(string id_usuario, double pago, string id_carro, string modelo, string estado, string tarjeta)//Inserta la venta en la tabla de ventas
         {
             int retorno = 0;
-            var cmd = "Select Entradas_Disponibles from eventos where Nombre_Evento ='" + nombreEvento + "'";
-            MySqlCommand cmdActualizarP1 = new MySqlCommand(cmd, ObtenerConexion());
-            Int32 cantidadEntradas;
-            cmdActualizarP1.Parameters.Add("@Name", MySqlDbType.VarChar);
-            cantidadEntradas = (int)cmdActualizarP1.ExecuteScalar();
-            int NuevaCantidad = cantidadEntradas - entradas;
-            if (NuevaCantidad >= 0)
+            MySqlCommand insertar = new MySqlCommand(String.Format("Insert Into Compra (id_usuario, pago, id_carro, modelo, estado, tarjeta) values('{0}', '{1}', '{2}', '{3}', '{4}', '{5}')", id_usuario, pago.ToString(), id_carro.ToString(), modelo, estado, tarjeta), MCompra.ObtenerConexion());
+            MySqlCommand updateInventory = new MySqlCommand("UPDATE productos SET Quantity = (Quantity - @itemsSold) WHERE Id = @itemId;", MCompra.ObtenerConexion());
+
+            updateInventory.Parameters.AddWithValue("@itemId", id_carro);
+            updateInventory.Parameters.AddWithValue("@itemsSold", CantidadDeCarros(id_carro));
+            updateInventory.Prepare();
+
+            int retornoCantidad = CantidadDeCarros(id_carro);
+
+            if (retornoCantidad < 1) 
             {
-                var cmd2 = "Update eventos Set Entradas_Disponibles = '" + NuevaCantidad + "' WHERE Nombre_Evento = '" + nombreEvento + "';";
-                MySqlCommand cmdActualizarP2 = new MySqlCommand(cmd2, ObtenerConexion());
-                retorno = cmdActualizarP2.ExecuteNonQuery();
+                return retorno;
             }
+
+            updateInventory.ExecuteNonQuery();
+            retorno = insertar.ExecuteNonQuery();
             return retorno;
-
         }
-        public static int estadisticas(int entradas, string nombreEvento)
 
+        private static int CantidadDeCarros(string id_carro) 
         {
-            int retorno;
-
-            var cmd = "Update eventos Set Ausentes = Ausentes+ " + entradas + " where Nombre_Evento='" + nombreEvento + "'";
-            MySqlCommand cmdestadisticas = new MySqlCommand(cmd, ObtenerConexion());
-            retorno = cmdestadisticas.ExecuteNonQuery();
-            return retorno;
+            int cantidad = 0;
+            MySqlCommand cmd = new MySqlCommand(String.Format("SELECT Quantity FROM productos WHERE Id = {0};", id_carro), MCompra.ObtenerConexion()); //Realizamos una selecion de la tabla usuarios.
+            
+            if (cmd.ExecuteScalar() == null)
+            {
+                cantidad = 0;
+            }
+            else
+                cantidad = Convert.ToInt32(cmd.ExecuteScalar());
+            conexion.Close();
+            return cantidad;
         }
+
     }
 }
