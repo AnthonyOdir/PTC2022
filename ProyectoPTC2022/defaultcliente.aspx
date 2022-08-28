@@ -68,6 +68,7 @@
               <li class="nav-item">
                 <asp:Button ID="btncerrar" class="nav-link" type="submit" runat="server" Text="Cerrar sesion" OnClick="btncerrar_Click" BackColor="Black" />
               </li>
+            </ul>
           </div>
         </nav>
       </div>

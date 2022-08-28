@@ -672,7 +672,15 @@ C:\Users\odirm\OneDrive\Desktop\BigCar\PTC2022\ProyectoPTC2022\bin\roslyn\vbc.rs
 C:\Users\odirm\OneDrive\Desktop\BigCar\PTC2022\ProyectoPTC2022\bin\roslyn\VBCSCompiler.exe
 C:\Users\odirm\OneDrive\Desktop\BigCar\PTC2022\ProyectoPTC2022\bin\roslyn\VBCSCompiler.exe.config
 C:\Users\odirm\OneDrive\Desktop\BigCar\PTC2022\ProyectoPTC2022\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+<<<<<<< HEAD
 C:\Users\odirm\OneDrive\Desktop\BigCar\PTC2022\ProyectoPTC2022\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\odirm\OneDrive\Desktop\BigCar\PTC2022\ProyectoPTC2022\obj\Debug\ProyectoPTC2022.csproj.CopyComplete
 C:\Users\odirm\OneDrive\Desktop\BigCar\PTC2022\ProyectoPTC2022\obj\Debug\ProyectoPTC2022.Properties.Resources.resources
 C:\Users\odirm\OneDrive\Desktop\BigCar\PTC2022\ProyectoPTC2022\obj\Debug\ProyectoPTC2022.csproj.GenerateResource.cache
+=======
+C:\Users\odirm\OneDrive\Desktop\BigCar\PTC2022\ProyectoPTC2022\bin\System.Memory.dll
+C:\Users\odirm\OneDrive\Desktop\BigCar\PTC2022\ProyectoPTC2022\bin\System.Numerics.Vectors.dll
+C:\Users\odirm\OneDrive\Desktop\BigCar\PTC2022\ProyectoPTC2022\bin\System.Buffers.dll
+C:\Users\odirm\OneDrive\Desktop\BigCar\PTC2022\ProyectoPTC2022\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\odirm\OneDrive\Desktop\BigCar\PTC2022\ProyectoPTC2022\obj\Debug\ProyectoPTC2022.csproj.CopyComplete
+>>>>>>> main
