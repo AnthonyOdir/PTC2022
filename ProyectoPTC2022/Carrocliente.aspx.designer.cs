@@ -11,7 +11,7 @@ namespace ProyectoPTC2022
 {
 
 
-    public partial class Inicio
+    public partial class Carrocliente
     {
 
         /// <summary>

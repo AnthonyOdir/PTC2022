@@ -11,6 +11,7 @@ namespace ProyectoPTC2022
 {
     public partial class defaultcliente : System.Web.UI.Page
     {
+
         protected void Page_Load(object sender, EventArgs e)
         {
             localStorageLiteral.Text =
@@ -24,6 +25,7 @@ namespace ProyectoPTC2022
             cargarCarrusel();
             Load_Products();
         }
+
 
         protected void btncerrar_Click(object sender, EventArgs e)
         {

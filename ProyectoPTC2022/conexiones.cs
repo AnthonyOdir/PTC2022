@@ -188,28 +188,7 @@ namespace ProyectoPTC2022
         {
             conexion.Open();
             MySqlDataAdapter DA = new MySqlDataAdapter();
-            MySqlCommand cmd = new MySqlCommand("SELECT sales_details.Id, sales_details.SalesId as 'id Venta', productos.Name as 'Producto', sales_details.Quantity as 'Cantidad', sales_details.UnitPrice as 'Precio Unidad', " +
-            "sales_details.TotalPrice as 'Total',  DATE_FORMAT(sales.Date, '%d/%c/%Y') as 'Fecha', usuarios.nombre_usuario as 'Comprador' FROM sales_details " +
-            "INNER JOIN productos ON sales_details.ItemId = productos.Id INNER JOIN sales ON sales.Id = sales_details.SalesId INNER JOIN usuarios ON sales.UserId = usuarios.Id ORDER BY sales_details.SalesId; ", conexion);
-            DA.SelectCommand = cmd;
-            DataTable DT = new DataTable();
-
-            DA.Fill(DT);
-
-            conexion.Close();
-            return DT;
-        }
-        public static DataTable Get_Sale(string QRCode)
-        {
-            conexion.Open();
-            MySqlDataAdapter DA = new MySqlDataAdapter();
-            MySqlCommand cmd = new MySqlCommand("SELECT sales_details.Id, sales_details.SalesId as 'Id Venta', productos.Name as 'Producto', sales_details.Quantity as 'Cantidad', sales_details.UnitPrice as 'Precio Unidad', " +
-            "sales_details.TotalPrice as 'Total',  DATE_FORMAT(sales.Date, '%d/%c/%Y') as 'Fecha', usuarios.nombre_usuario as 'Comprador' FROM sales_details " +
-            "INNER JOIN productos ON sales_details.ItemId = productos.Id INNER JOIN sales ON sales.Id = sales_details.SalesId INNER JOIN usuarios ON sales.UserId = usuarios.Id WHERE sales.QRTEXT = @qr ORDER BY sales_details.SalesId; ", conexion);
-
-            cmd.Parameters.AddWithValue("@qr", QRCode);
-            cmd.Prepare();
-
+            MySqlCommand cmd = new MySqlCommand("SELECT id, id_usuario, pago, id_carro, modelo, estado FROM compra; ", conexion);
             DA.SelectCommand = cmd;
             DataTable DT = new DataTable();
 
@@ -250,7 +229,7 @@ namespace ProyectoPTC2022
                 {
                     imagenes = imagenes + "<div class='carousel-item'><img src='images/" + row["Direccion"] + "' width='1100' height='500' /><div class='carousel-caption d-none d-md-block'><h5>" + row["Texto"] + "</h5></div></div>";
                 }
-
+                 
                 if (contador == 0)
                 {
                     indicators = indicators + "<li data-target='#demo' data-slide-to='" + contador.ToString() + "' class='active'></li>";
