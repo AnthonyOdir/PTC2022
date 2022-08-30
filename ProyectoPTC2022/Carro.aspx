@@ -58,8 +58,11 @@
 
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav  mx-auto ">
+                <li class="nav-item">
+	            <asp:Button ID="btn_idioma" class="nav-link" type="submit" runat="server" Text="" BackColor="transparent" BorderColor="Transparent" OnClick="btn_idioma_Click" />
+              </li>
               <li class="nav-item">
-                <a class="nav-link" href="default.aspx">Inicio </a>
+                <a class="nav-link" href="default.aspx"><%=gTranslate.Translate("Inicio") %></a>
               </li>
               <li class="nav-item active">
                 <a class="nav-link" href="Carro.aspx">Carros <span class="sr-only">(current)</span> </a>
