@@ -15,7 +15,7 @@
   <meta name="author" content="" />
   <link rel="shortcut icon" href="images/favicon.png" type="">
 
-  <title> Big Car </title>
+  <title> <%=gTranslate.Translate("Sobre Nosotros Big Car") %> </title>
 
   <!-- bootstrap core css -->
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
@@ -35,6 +35,8 @@
 </head>
 
 <body class="sub_page">
+    <form id="form1" runat="server">
+
 
   <div class="hero_area">
     <div class="bg-box">
@@ -56,24 +58,27 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav  mx-auto ">
-              <li class="nav-item">
-                <a class="nav-link" href="default.aspx">Inicio </a>
+                <li class="nav-item">
+	            <asp:Button ID="btn_idioma" class="nav-link" type="submit" runat="server" Text="" BackColor="transparent" BorderColor="Transparent" OnClick="btn_idioma_Click" />
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="Carro.aspx">Carros <span class="sr-only">(current)</span> </a>
+                <a class="nav-link" href="default.aspx"><%=gTranslate.Translate("Inicio") %></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Carro.aspx"><%=gTranslate.Translate("Carros") %></a>
               </li>
               <li class="nav-item active">
-                <a class="nav-link" href="Sobre_Nosotros.aspx">Sobre Nosotros </a>
+                <a class="nav-link" href="Sobre_Nosotros.aspx"><%=gTranslate.Translate("Sobre Nosotros") %></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="Register.aspx">Registro</a>
+                <a class="nav-link" href="Register.aspx"><%=gTranslate.Translate("Registrarse") %></a>
               </li>
             </ul>
             <div class="user_option">
-              <a href="" class="user_link">
+              <a href="Register.aspx" class="user_link">
                 <i class="fa fa-user" aria-hidden="true"></i>
               </a>
-              <a class="cart_link" href="#">
+              <a class="cart_link" href="Register.aspx">
                 <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
                   <g>
                     <g>
@@ -132,9 +137,6 @@
                   <i class="fa fa-search" aria-hidden="true"></i>
                 </button>
               </form>
-              <a href="" class="order_online">
-                Comprar Ahora
-              </a>
             </div>
           </div>
         </nav>
@@ -158,11 +160,11 @@
           <div class="detail-box">
             <div class="heading_container">
               <h2>
-                Somos Bigcar
+               <%=gTranslate.Translate("Somos Big Car") %>
               </h2>
             </div>
             <p>
-             Tratamos de proporcionarle carros de segunda mano de buena calidad, para que usted tenga una experiencia amistosa sin tener el miedo de que algun carro tenga defectos, le aseguramos con seguridad que su carro tendra una buena calidad y podra disfrutar de las vetanjas que este le ofrece, tenemos la obligacion de darle una experiencia agradable y segura en nuestra plataforma
+               <%=gTranslate.Translate("Tratamos de proporcionarle carros de segunda mano de buena calidad, para que usted tenga una experiencia amistosa sin tener el miedo de que algun carro tenga defectos, le aseguramos con seguridad que su carro tendra una buena calidad y podra disfrutar de las vetanjas que este le ofrece, tenemos la obligacion de darle una experiencia agradable y segura en nuestra plataforma") %>
             </p>
           </div>
         </div>
@@ -179,19 +181,19 @@
         <div class="col-md-4 footer-col">
           <div class="footer_contact">
             <h4>
-              Contactanos
+               <%=gTranslate.Translate("Contactenos") %>
             </h4>
             <div class="contact_link_box">
               <a href="">
                 <i class="fa fa-map-marker" aria-hidden="true"></i>
                 <span>
-                  Localizacion
+               <%=gTranslate.Translate("Ubicación") %>
                 </span>
               </a>
               <a href="">
                 <i class="fa fa-phone" aria-hidden="true"></i>
                 <span>
-                  Llame al +503 7031 1214
+               <%=gTranslate.Translate("Llame al +503 6157 2335") %>
                 </span>
               </a>
               <a href="">
@@ -209,33 +211,16 @@
               Big Car
             </a>
             <p>
-              Carros de calidad y a buen precio 
+              <%=gTranslate.Translate("Carros de calidad y a un buen precio") %>
             </p>
-            <div class="footer_social">
-              <a href="">
-                <i class="fa fa-facebook" aria-hidden="true"></i>
-              </a>
-              <a href="">
-                <i class="fa fa-twitter" aria-hidden="true"></i>
-              </a>
-              <a href="">
-                <i class="fa fa-linkedin" aria-hidden="true"></i>
-              </a>
-              <a href="">
-                <i class="fa fa-instagram" aria-hidden="true"></i>
-              </a>
-              <a href="">
-                <i class="fa fa-pinterest" aria-hidden="true"></i>
-              </a>
-            </div>
           </div>
         </div>
         <div class="col-md-4 footer-col">
           <h4>
-            Horarios 
+            <%=gTranslate.Translate("Nuestro horarios") %> 
           </h4>
           <p>
-            Todos los días
+            <%=gTranslate.Translate("Todos los dias") %>
           </p>
           <p>
             24/7
@@ -273,6 +258,7 @@
   <!-- Google Map -->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap">
   </script>
+        </form>
   <!-- End Google Map -->
 
 </body>

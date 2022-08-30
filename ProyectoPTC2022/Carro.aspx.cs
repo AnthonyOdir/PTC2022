@@ -8,6 +8,7 @@ using System.Web.UI.WebControls;
 
 namespace ProyectoPTC2022
 {
+
     public partial class Carro : System.Web.UI.Page
     {
         public static GTranslate gTranslate;

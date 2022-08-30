@@ -127,6 +127,7 @@
     <Content Include="AgregarImagen.aspx" />
     <Content Include="BIGCARCARROPRUEBA1.aspx" />
     <Content Include="Carro.aspx" />
+    <Content Include="Carrocliente.aspx" />
     <Content Include="CarroCompraPrueba1.aspx" />
     <Content Include="Carroingles.aspx" />
     <Content Include="CarroPrueba1.aspx" />
@@ -230,6 +231,13 @@
     </Compile>
     <Compile Include="Carro.aspx.designer.cs">
       <DependentUpon>Carro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Carrocliente.aspx.cs">
+      <DependentUpon>Carrocliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Carrocliente.aspx.designer.cs">
+      <DependentUpon>Carrocliente.aspx</DependentUpon>
     </Compile>
     <Compile Include="CarroCompraPrueba1.aspx.cs">
       <DependentUpon>CarroCompraPrueba1.aspx</DependentUpon>

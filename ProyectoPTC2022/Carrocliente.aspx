@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="default.aspx.cs" Inherits="ProyectoPTC2022._default" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Carrocliente.aspx.cs" Inherits="ProyectoPTC2022.Carrocliente" %>
 
 <!DOCTYPE html>
 <html>
@@ -15,7 +15,7 @@
   <meta name="author" content="" />
   <link rel="shortcut icon" href="images/.png" type="">
 
-  <title> Big Car </title>
+  <title> Carros Big Car </title>
 
   <!-- bootstrap core css -->
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
@@ -37,7 +37,7 @@
 </head>
 
 <body>
-    <form id="form1" runat="server">
+    <form id="form1" runat= "server">
 
   <div class="hero_area">
     <div class="bg-box">
@@ -59,23 +59,14 @@
 
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav  mx-auto ">
-              <li class="nav-item">
-	            <asp:Button ID="btn_idioma" class="nav-link" type="submit" runat="server" Text="" BackColor="transparent" BorderColor="Transparent" OnClick="btn_idioma_Click" />
-              </li>
               <li class="nav-item active">
-                <a class="nav-link" href="Inicio.aspx"><%=gTranslate.Translate("Inicio") %></a>
+                <a class="nav-link" href="Inicio.aspx">Inicio </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="Carro.aspx"><%=gTranslate.Translate("Carros") %></a>
+                <a class="nav-link" href="Carro.aspx">Carros <span class="sr-only">(current)</span> </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="Sobre_Nosotros.aspx"><%=gTranslate.Translate("Sobre Nosotros") %></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="Register.aspx"><%=gTranslate.Translate("Registrarse") %></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="Register.aspx"><%=gTranslate.Translate("Comprar") %></a>
+                <asp:Button ID="btncerrar" class="nav-link" type="submit" runat="server" Text="Cerrar sesion" OnClick="btncerrar_Click" BackColor="Black" />
               </li>
             </ul>
           </div>
@@ -133,20 +124,20 @@
 
   <!-- food section -->
 
-  <section class="food_section layout_padding-bottom">
+    <section class="food_section layout_padding-bottom">
     <div class="container">
       <div class="heading_container heading_center">
         <h2>
-         <%=gTranslate.Translate("Categorias") %>
+          Categorias
         </h2>
       </div>
         
       <ul class="filters_menu">
-        <li class="active" data-filter="*"> <%=gTranslate.Translate("Todos") %></li>
-        <li data-filter=".PESADOS"> <%=gTranslate.Translate("Carros Pesados") %></li>
-        <li data-filter=".ENTRADA"> <%=gTranslate.Translate("Carros de Entrada") %></li>
-        <li data-filter=".CASI_NUEVOS"> <%=gTranslate.Translate("Casi Nuevos") %></li>
-        <li data-filter=".MUY_USADOS"> <%=gTranslate.Translate("Muy Usados") %></li> 
+        <li class="active" data-filter="*">Todos</li>
+        <li data-filter=".PESADOS">Carros Pesados</li>
+        <li data-filter=".ENTRADA">Carros de entrada</li>
+        <li data-filter=".CASI_NUEVOS">Casi Nuevos</li>
+        <li data-filter=".MUY_USADOS">Muy usado</li> 
       </ul>
 
       <div class="filters-content">
@@ -159,9 +150,9 @@
             </div>
                   </div>
                 </div>
-
+         </div>
   </section>
-        
+
   <!-- end food section -->
 
   <!-- about section -->
@@ -179,14 +170,14 @@
           <div class="detail-box">
             <div class="heading_container">
               <h2>
-                <%=gTranslate.Translate("Somos Big Car") %>
+                Somos Big Car
               </h2>
             </div>
             <p>
-            <%=gTranslate.Translate("Tratamos de proporcionarle carros de segunda mano de buena calidad, para que usted tenga") %>
-            <%=gTranslate.Translate( "una experiencia amistosa sin tener el miedo de que algun carro tenga defectos, le aseguramos" ) %>
-            <%=gTranslate.Translate("con seguridad que su carro tendra una buena calidad y podra disfrutar de las vetanjas que este") %>
-            <%=gTranslate.Translate("le ofrece, tenemos la obligacion de darle una experiencia agradable y segura en nuestra plataforma") %>
+              Tratamos de proporcionarle carros de segunda mano de buena calidad, para que usted tenga
+              una experiencia amistosa sin tener el miedo de que algun carro tenga defectos, le aseguramos 
+              con seguridad que su carro tendra una buena calidad y podra disfrutar de las vetanjas que este
+              le ofrece, tenemos la obligacion de darle una experiencia agradable y segura en nuestra plataforma
             </p>
           </div>
         </div>
@@ -195,19 +186,14 @@
   </section>
 
   <!-- end about section -->
-
-  <!-- book section -->
-   <section>
-        <div class="col-md-6 justify-content-center">
-          <div class="map_container justify-content-center">
-              <!-- Google Map -->
-             <script> src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap" </script>
+ <section>
+        <div class="col-md-6">
+          <div class="map_container ">
+             <script> src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"</script>
              <!-- End Google Map -->
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3876.6722024533165!2d-89.28956775059127!3d13.6776854903483!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f632efe53778fb3%3A0x21f34da7f1473fd3!2sColegio%20Salesiano%20Santa%20Cecilia!5e0!3m2!1ses-419!2ssv!4v1657655597658!5m2!1ses-419!2ssv" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
            </div>
-          </div>
         </div>
-
   </section>
   <!-- end book section -->
 
@@ -217,7 +203,7 @@
     <div class="container">
       <div class="heading_container heading_center psudo_white_primary mb_45">
         <h2>
-          <%=gTranslate.Translate("Reseñas") %>
+          Reseñas
         </h2>
       </div>
       <div class="carousel-wrap row ">
@@ -226,7 +212,6 @@
             <div class="box">
               <div class="detail-box">
                 <p>
-                <%=gTranslate.Translate("Categorias") %>
                   Es una pagina muy buena, me es muy funcional y me ayudo a comprarle el regalo de cumpleaños a mi ex novia.
                 </p>
                 <h6>
@@ -245,7 +230,6 @@
             <div class="box">
               <div class="detail-box">
                 <p>
-                 <%=gTranslate.Translate("Categorias") %>
                   Me gusta mucho esta pagina, sus carros tienen precios accecibles y aqui fue donde mi ex novio me compro un carro.
                 </p>
                 <h6>
@@ -274,19 +258,19 @@
         <div class="col-md-4 footer-col">
           <div class="footer_contact">
             <h4>
-             <%=gTranslate.Translate("Contactanos") %>
+              Contact Us
             </h4>
             <div class="contact_link_box">
               <a href="">
                 <i class="fa fa-map-marker" aria-hidden="true"></i>
                 <span>
-                <%=gTranslate.Translate("Ubicación") %>
+                  Location
                 </span>
               </a>
               <a href="">
                 <i class="fa fa-phone" aria-hidden="true"></i>
                 <span>
-                <%=gTranslate.Translate("Llame al +530 61572335") %>
+                  Call +01 1234567890
                 </span>
               </a>
               <a href="">
@@ -304,16 +288,33 @@
               bigcar.png
             </a>
             <p>
-            <%=gTranslate.Translate("Carros de calidad y a buen precio ") %>
+              Necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with
             </p>
+            <div class="footer_social">
+              <a href="">
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-linkedin" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-instagram" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-pinterest" aria-hidden="true"></i>
+              </a>
+            </div>
           </div>
         </div>
         <div class="col-md-4 footer-col">
           <h4>
-            <%=gTranslate.Translate("Nustros horarios") %>
+            Opening Hours
           </h4>
           <p>
-          <%=gTranslate.Translate("Todos los dias") %>
+            Everyday
           </p>
           <p>
             10.00 Am -10.00 Pm
@@ -350,6 +351,8 @@
   <script src="js/custom.js"></script>
   </form>
   <asp:Literal ID="localStorageLiteral" runat="server" Text=""></asp:Literal>
+
 </body>
+
 </html>
 
