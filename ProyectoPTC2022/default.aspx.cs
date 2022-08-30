@@ -11,6 +11,7 @@ namespace ProyectoPTC2022
 {
     public partial class _default : System.Web.UI.Page
     {
+        public static GTranslate gTranslate;
         protected void Page_Load(object sender, EventArgs e)
         {
             localStorageLiteral.Text =
@@ -20,7 +21,8 @@ namespace ProyectoPTC2022
                 $"if(userName && isAdmin == 1) {{{JsService.ReplaceLocation("Inicio.aspx")}}}" +
                 $"if(userName) {JsService.ReplaceLocation("defaultcliente.aspx")}" +
                 "</script>";
-
+            gTranslate = new GTranslate(Convert.ToInt32(Session["language"]));
+            btn_idioma.Text = gTranslate.GetLanguageButtonText();
             cargarCarrusel();
             Load_Products();
         }
@@ -57,5 +59,10 @@ namespace ProyectoPTC2022
             ProductosLiteral.Text = template;
         }
 
+        protected void btn_idioma_Click(object sender, EventArgs e)
+        {
+            gTranslate.ChangeLanguage();
+            Session["language"] = gTranslate.language;
+        }
     }
 }
