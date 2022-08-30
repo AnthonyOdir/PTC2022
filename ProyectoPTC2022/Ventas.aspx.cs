@@ -13,13 +13,9 @@ namespace ProyectoPTC2022
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            localStorageLiteral.Text =
-                "<script>" +
-                    $"const userName = {JsLocalStorage.getItem("userName")}" +
-                    $"const isAdmin = {JsLocalStorage.getItem("isAdmin")}" +
-                    $"if(!userName) {{{JsService.ReplaceLocation("Login2.aspx")}}}" +
-                    $"if(isAdmin != 1) {{{JsService.ReplaceLocation("defaultcliente.aspx")}}}" +
-                "</script>";
+           
+            
+               
             Load_Sales();
         }
 
