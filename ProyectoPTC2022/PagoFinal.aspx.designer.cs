@@ -24,6 +24,15 @@ namespace ProyectoPTC2022
         protected global::System.Web.UI.HtmlControls.HtmlForm Form1;
 
         /// <summary>
+        /// Control PGF.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label PGF;
+
+        /// <summary>
         /// Control Label1.
         /// </summary>
         /// <remarks>
@@ -103,6 +112,15 @@ namespace ProyectoPTC2022
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnBuy_Click;
+
+        /// <summary>
+        /// Control Literal1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal Literal1;
 
         /// <summary>
         /// Control userId.
