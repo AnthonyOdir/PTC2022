@@ -157,3 +157,38 @@ C:\Users\JEFFERSON GRANDE\Documents\GitHub\PTC2022\ProyectoPTC2022\bin\System.Th
 C:\Users\JEFFERSON GRANDE\Documents\GitHub\PTC2022\ProyectoPTC2022\bin\System.ValueTuple.xml
 C:\Users\JEFFERSON GRANDE\Documents\GitHub\PTC2022\ProyectoPTC2022\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\JEFFERSON GRANDE\Documents\GitHub\PTC2022\ProyectoPTC2022\obj\Debug\ProyectoPTC2022.csproj.CopyComplete
+C:\Users\odirm\OneDrive\Desktop\BigCar\PTC2022\ProyectoPTC2022\bin\Google.Api.Gax.dll
+C:\Users\odirm\OneDrive\Desktop\BigCar\PTC2022\ProyectoPTC2022\bin\Google.Api.Gax.Rest.dll
+C:\Users\odirm\OneDrive\Desktop\BigCar\PTC2022\ProyectoPTC2022\bin\Google.Apis.Auth.dll
+C:\Users\odirm\OneDrive\Desktop\BigCar\PTC2022\ProyectoPTC2022\bin\Google.Apis.Auth.PlatformServices.dll
+C:\Users\odirm\OneDrive\Desktop\BigCar\PTC2022\ProyectoPTC2022\bin\Google.Apis.Core.dll
+C:\Users\odirm\OneDrive\Desktop\BigCar\PTC2022\ProyectoPTC2022\bin\Google.Apis.dll
+C:\Users\odirm\OneDrive\Desktop\BigCar\PTC2022\ProyectoPTC2022\bin\Google.Apis.PlatformServices.dll
+C:\Users\odirm\OneDrive\Desktop\BigCar\PTC2022\ProyectoPTC2022\bin\Google.Apis.Translate.v2.dll
+C:\Users\odirm\OneDrive\Desktop\BigCar\PTC2022\ProyectoPTC2022\bin\Google.Cloud.Translation.V2.dll
+C:\Users\odirm\OneDrive\Desktop\BigCar\PTC2022\ProyectoPTC2022\bin\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\odirm\OneDrive\Desktop\BigCar\PTC2022\ProyectoPTC2022\bin\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\odirm\OneDrive\Desktop\BigCar\PTC2022\ProyectoPTC2022\bin\Newtonsoft.Json.dll
+C:\Users\odirm\OneDrive\Desktop\BigCar\PTC2022\ProyectoPTC2022\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\odirm\OneDrive\Desktop\BigCar\PTC2022\ProyectoPTC2022\bin\System.Threading.Tasks.Extensions.dll
+C:\Users\odirm\OneDrive\Desktop\BigCar\PTC2022\ProyectoPTC2022\bin\System.ValueTuple.dll
+C:\Users\odirm\OneDrive\Desktop\BigCar\PTC2022\ProyectoPTC2022\bin\Google.Api.Gax.pdb
+C:\Users\odirm\OneDrive\Desktop\BigCar\PTC2022\ProyectoPTC2022\bin\Google.Api.Gax.xml
+C:\Users\odirm\OneDrive\Desktop\BigCar\PTC2022\ProyectoPTC2022\bin\Google.Api.Gax.Rest.pdb
+C:\Users\odirm\OneDrive\Desktop\BigCar\PTC2022\ProyectoPTC2022\bin\Google.Api.Gax.Rest.xml
+C:\Users\odirm\OneDrive\Desktop\BigCar\PTC2022\ProyectoPTC2022\bin\Google.Apis.pdb
+C:\Users\odirm\OneDrive\Desktop\BigCar\PTC2022\ProyectoPTC2022\bin\Google.Apis.xml
+C:\Users\odirm\OneDrive\Desktop\BigCar\PTC2022\ProyectoPTC2022\bin\Google.Apis.Auth.pdb
+C:\Users\odirm\OneDrive\Desktop\BigCar\PTC2022\ProyectoPTC2022\bin\Google.Apis.Auth.xml
+C:\Users\odirm\OneDrive\Desktop\BigCar\PTC2022\ProyectoPTC2022\bin\Google.Apis.Core.pdb
+C:\Users\odirm\OneDrive\Desktop\BigCar\PTC2022\ProyectoPTC2022\bin\Google.Apis.Core.xml
+C:\Users\odirm\OneDrive\Desktop\BigCar\PTC2022\ProyectoPTC2022\bin\Google.Apis.Translate.v2.pdb
+C:\Users\odirm\OneDrive\Desktop\BigCar\PTC2022\ProyectoPTC2022\bin\Google.Apis.Translate.v2.xml
+C:\Users\odirm\OneDrive\Desktop\BigCar\PTC2022\ProyectoPTC2022\bin\Google.Cloud.Translation.V2.pdb
+C:\Users\odirm\OneDrive\Desktop\BigCar\PTC2022\ProyectoPTC2022\bin\Google.Cloud.Translation.V2.xml
+C:\Users\odirm\OneDrive\Desktop\BigCar\PTC2022\ProyectoPTC2022\bin\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\odirm\OneDrive\Desktop\BigCar\PTC2022\ProyectoPTC2022\bin\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\odirm\OneDrive\Desktop\BigCar\PTC2022\ProyectoPTC2022\bin\Newtonsoft.Json.xml
+C:\Users\odirm\OneDrive\Desktop\BigCar\PTC2022\ProyectoPTC2022\bin\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\odirm\OneDrive\Desktop\BigCar\PTC2022\ProyectoPTC2022\bin\System.Threading.Tasks.Extensions.xml
+C:\Users\odirm\OneDrive\Desktop\BigCar\PTC2022\ProyectoPTC2022\bin\System.ValueTuple.xml

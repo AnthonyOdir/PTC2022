@@ -15,8 +15,7 @@ namespace ProyectoPTC2022
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-           if (!IsPostBack)
-                Calendar1.Visible = false;
+          
         }
 
         protected void Calendar1_SelectionChanged(object sender, EventArgs e)
@@ -86,20 +85,15 @@ namespace ProyectoPTC2022
         }
         protected void Calendar1_DayRender(object sender, DayRenderEventArgs e)
         {
-             
-            if (e.Day.Date >DateTime.Now.Date)
+
+            if (e.Day.Date > DateTime.Now.Date)
             {
                 e.Day.IsSelectable = false;
                 e.Cell.ForeColor = System.Drawing.Color.Red;
-                e.Cell.Font.Strikeout = true;              
+                e.Cell.Font.Strikeout = true;
                 e.Day.IsSelectable = false;
-                
-            }
-        }
 
-        protected void Button1_Click(object sender, EventArgs e)
-        {
-            Calendar1.Visible = !Calendar1.Visible;
+            }
         }
     }
 }

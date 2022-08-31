@@ -140,6 +140,7 @@
     <Content Include="CSS\bootstrap.min.css" />
     <Content Include="CSS\font-awesome.min.css" />
     <Content Include="CSS\Login.css" />
+    <Content Include="CSS\loginD.css" />
     <Content Include="CSS\responsive.css" />
     <Content Include="CSS\style.css" />
     <Content Include="default.aspx" />
@@ -188,6 +189,7 @@
     <Content Include="js\bootstrap.js" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\custom.js" />
+    <Content Include="js\global.js" />
     <Content Include="js\jquery-3.4.1.min.js" />
     <Content Include="Login2.aspx" />
     <Content Include="Loginingles.aspx" />
@@ -200,6 +202,20 @@
     <Content Include="Sobre_Nosotros.aspx" />
     <Content Include="SweetAlert\sweetalert2.all.min.js" />
     <Content Include="SweetAlert\sweetalert2.js" />
+    <Content Include="vendor\datepicker\daterangepicker.css" />
+    <Content Include="vendor\datepicker\daterangepicker.js" />
+    <Content Include="vendor\datepicker\moment.min.js" />
+    <Content Include="vendor\font-awesome-4.7\css\font-awesome.css" />
+    <Content Include="vendor\font-awesome-4.7\css\font-awesome.min.css" />
+    <Content Include="vendor\font-awesome-4.7\fonts\fontawesome-webfont.svg" />
+    <Content Include="vendor\font-awesome-4.7\HELP-US-OUT.txt" />
+    <Content Include="vendor\jquery\jquery.js" />
+    <Content Include="vendor\jquery\jquery.min.js" />
+    <Content Include="vendor\mdi-font\css\material-design-iconic-font.css" />
+    <Content Include="vendor\mdi-font\css\material-design-iconic-font.min.css" />
+    <Content Include="vendor\mdi-font\fonts\Material-Design-Iconic-Font.svg" />
+    <Content Include="vendor\select2\select2.min.css" />
+    <Content Include="vendor\select2\select2.min.js" />
     <Content Include="Ventas.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -407,6 +423,15 @@
     <Content Include="js\bootstrap.js.map" />
     <Content Include="js\bootstrap.min.js.map" />
     <None Include="packages.config" />
+    <Content Include="vendor\font-awesome-4.7\fonts\fontawesome-webfont.eot" />
+    <Content Include="vendor\font-awesome-4.7\fonts\fontawesome-webfont.ttf" />
+    <Content Include="vendor\font-awesome-4.7\fonts\fontawesome-webfont.woff" />
+    <Content Include="vendor\font-awesome-4.7\fonts\fontawesome-webfont.woff2" />
+    <Content Include="vendor\font-awesome-4.7\fonts\FontAwesome.otf" />
+    <Content Include="vendor\mdi-font\fonts\Material-Design-Iconic-Font.eot" />
+    <Content Include="vendor\mdi-font\fonts\Material-Design-Iconic-Font.ttf" />
+    <Content Include="vendor\mdi-font\fonts\Material-Design-Iconic-Font.woff" />
+    <Content Include="vendor\mdi-font\fonts\Material-Design-Iconic-Font.woff2" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
