@@ -160,7 +160,7 @@
           <div class="detail-box">
             <div class="heading_container">
               <h2>
-               <%=gTranslate.Translate("Somos Big Car") %>
+               <%=gTranslate.Translate("Nosotros somos") %> Big Car
               </h2>
             </div>
             <p>

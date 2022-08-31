@@ -15,7 +15,7 @@
   <meta name="author" content="" />
   <link rel="shortcut icon" href="images/.png" type="">
 
-  <title> Carros Big Car </title>
+  <title> <%=gTranslate.Translate("Carros") %> Big Car </title>
 
   <!-- bootstrap core css -->
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
@@ -47,7 +47,7 @@
     <header class="header_section">
       <div class="container">
         <nav class="navbar navbar-expand-lg custom_nav-container ">
-          <a class="navbar-brand" href="index.html">
+          <a class="navbar-brand" href="Carrocliente.aspx">
             <span>
               Big Car
             </span>
@@ -59,6 +59,9 @@
 
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav  mx-auto ">
+                <li class="nav-item">
+	            <asp:Button ID="btn_idioma" class="nav-link" type="submit" runat="server" Text="" BackColor="transparent" BorderColor="Transparent" OnClick="btn_idioma_Click" />
+              </li>
               <li class="nav-item active">
                 <a class="nav-link" href="Inicio.aspx">Inicio </a>
               </li>
@@ -66,7 +69,7 @@
                 <a class="nav-link" href="Carro.aspx">Carros <span class="sr-only">(current)</span> </a>
               </li>
               <li class="nav-item">
-                <asp:Button ID="btncerrar" class="nav-link" type="submit" runat="server" Text="Cerrar sesion" OnClick="btncerrar_Click" BackColor="Black" />
+                <asp:Button ID="btncerrar" class="nav-link" type="submit" runat="server" Text="Cerrar sesion" OnClick="btncerrar_Click" BackColor="transparent" BorderColor="Transparent"/>
               </li>
             </ul>
           </div>
@@ -128,16 +131,16 @@
     <div class="container">
       <div class="heading_container heading_center">
         <h2>
-          Categorias
+          <%=gTranslate.Translate("Categorias") %>
         </h2>
       </div>
         
       <ul class="filters_menu">
-        <li class="active" data-filter="*">Todos</li>
-        <li data-filter=".PESADOS">Carros Pesados</li>
-        <li data-filter=".ENTRADA">Carros de entrada</li>
-        <li data-filter=".CASI_NUEVOS">Casi Nuevos</li>
-        <li data-filter=".MUY_USADOS">Muy usado</li> 
+        <li class="active" data-filter="*"><%=gTranslate.Translate("Todos") %></li>
+        <li data-filter=".PESADOS"><%=gTranslate.Translate("Carros Pesados") %></li>
+        <li data-filter=".ENTRADA"><%=gTranslate.Translate("Carros de Entrada") %></li>
+        <li data-filter=".CASI_NUEVOS"><%=gTranslate.Translate("Casi Nuevos") %></li>
+        <li data-filter=".MUY_USADOS"><%=gTranslate.Translate("Muy Usados") %></li> 
       </ul>
 
       <div class="filters-content">
@@ -170,14 +173,14 @@
           <div class="detail-box">
             <div class="heading_container">
               <h2>
-                Somos Big Car
+                <%=gTranslate.Translate("Nosotros somos") %> Big Car
               </h2>
             </div>
             <p>
-              Tratamos de proporcionarle carros de segunda mano de buena calidad, para que usted tenga
-              una experiencia amistosa sin tener el miedo de que algun carro tenga defectos, le aseguramos 
-              con seguridad que su carro tendra una buena calidad y podra disfrutar de las vetanjas que este
-              le ofrece, tenemos la obligacion de darle una experiencia agradable y segura en nuestra plataforma
+            <%=gTranslate.Translate("Tratamos de proporcionarle carros de segunda mano de buena calidad, para que usted tenga") %>
+            <%=gTranslate.Translate( "una experiencia amistosa sin tener el miedo de que algun carro tenga defectos, le aseguramos" ) %>
+            <%=gTranslate.Translate("con seguridad que su carro tendra una buena calidad y podra disfrutar de las vetanjas que este") %>
+            <%=gTranslate.Translate("le ofrece, tenemos la obligacion de darle una experiencia agradable y segura en nuestra plataforma") %>
             </p>
           </div>
         </div>
@@ -203,7 +206,7 @@
     <div class="container">
       <div class="heading_container heading_center psudo_white_primary mb_45">
         <h2>
-          Reseñas
+          <%=gTranslate.Translate("Reseñas") %>
         </h2>
       </div>
       <div class="carousel-wrap row ">
@@ -258,25 +261,25 @@
         <div class="col-md-4 footer-col">
           <div class="footer_contact">
             <h4>
-              Contact Us
+              <%=gTranslate.Translate("Contactenos") %>
             </h4>
             <div class="contact_link_box">
               <a href="">
                 <i class="fa fa-map-marker" aria-hidden="true"></i>
                 <span>
-                  Location
+                  <%=gTranslate.Translate("Ubicacion") %>
                 </span>
               </a>
               <a href="">
                 <i class="fa fa-phone" aria-hidden="true"></i>
                 <span>
-                  Call +01 1234567890
+                  <%=gTranslate.Translate("Llame al +503 6157 2335") %>
                 </span>
               </a>
               <a href="">
                 <i class="fa fa-envelope" aria-hidden="true"></i>
                 <span>
-                  demo@gmail.com
+                  bigcarptc@gmail.com
                 </span>
               </a>
             </div>
@@ -288,33 +291,16 @@
               bigcar.png
             </a>
             <p>
-              Necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with
+             <%=gTranslate.Translate("Categorias") %>
             </p>
-            <div class="footer_social">
-              <a href="">
-                <i class="fa fa-facebook" aria-hidden="true"></i>
-              </a>
-              <a href="">
-                <i class="fa fa-twitter" aria-hidden="true"></i>
-              </a>
-              <a href="">
-                <i class="fa fa-linkedin" aria-hidden="true"></i>
-              </a>
-              <a href="">
-                <i class="fa fa-instagram" aria-hidden="true"></i>
-              </a>
-              <a href="">
-                <i class="fa fa-pinterest" aria-hidden="true"></i>
-              </a>
-            </div>
           </div>
         </div>
         <div class="col-md-4 footer-col">
           <h4>
-            Opening Hours
+            <%=gTranslate.Translate("Nuestros horarios") %>
           </h4>
           <p>
-            Everyday
+            <%=gTranslate.Translate("Todos los dias") %>
           </p>
           <p>
             10.00 Am -10.00 Pm
