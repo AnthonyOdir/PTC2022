@@ -51,14 +51,10 @@
               < Regresar
             </span>
           </a>
-                <div class="signup-content">
-
-
-        <div class="signin-form">
-                        <h2 class="form-title">Registrese</h2>
+               <div class="signup-content">
                     <div class="signup-form">
-                        <h2 class="form-title"></h2>
-                        <div method="POST" class="register-form" id="register-form">
+                        <h2 class="form-title">Registrese</h2>
+                        <form method="POST" class="register-form" id="register-form">
                             <div class="form-group">
                                 <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
                                  <asp:TextBox ID="txtfirst" runat="server"  placeholder="Nombre" type="text" onpaste="return false" onkeypress="return validar(event)" ></asp:TextBox>
@@ -84,32 +80,27 @@
                                 <label for="email"><i class="zmdi zmdi-email"></i></label>
                                 <asp:TextBox ID="txtgmail" runat="server"  placeholder="Correo" type="email" onpaste="return false"/>
                             </div>
-                            <div class="form-group">
-                            <asp:Button ID="btnCalendario_Click" runat="server" Text="Calendario" OnClick="Button1_Click" />
-                                </div>
+                           
                                 <div class="form-group">
                             <asp:Calendar ID="Calendar1" runat="server" Height="72px" Width="156px" OnDayRender="Calendar1_DayRender" OnSelectionChanged="Calendar1_SelectionChanged"> </asp:Calendar>
-                                    </div>
-                            <div class="form-group">
                             <asp:TextBox ID="txtFecha" runat="server"></asp:TextBox></div>
                          </div>
-                        <div>
-                   </div>
-
-                  </div>
-                  </div>
-
                     <div class="signup-image">
                         <figure><img src="images/signup-image.jpg" alt="sing up image"></figure>
                           <div>
                               <asp:HyperLink ID="olvidaste" runat="server" CssClass="Login" Text="¿Ya tienes una cuenta?" NavigateUrl="Login2.aspx" />
+                          </div>
                         <div class="form-group form-button"> 
                                 <asp:Button runat="server" Text="Registrarse" CssClass="form-submit" OnClick="Unnamed1_Click"></asp:Button>
-                          </div>                            
-                       <asp:Literal ID="Literal1" runat="server" Text=""></asp:Literal>
                             </div>
-                      </div>
+                          <asp:Literal ID="Literal1" runat="server" Text=""></asp:Literal>
+                    </div>
                    </div>
+                   </div>
+
+                        </form>
+
+                   
         </section>
         <asp:Literal ID="alerta" runat="server" Text=""></asp:Literal>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
