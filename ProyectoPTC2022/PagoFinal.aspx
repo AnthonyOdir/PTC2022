@@ -50,6 +50,7 @@
 
   <!-- Custom styles for this template -->
   <link href="css/style.css" rel="stylesheet" />
+    <link href="css/BTN.css" rel="stylesheet" />
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
 
@@ -103,32 +104,32 @@
 				                <br />
                                 </div>
                             <div class="mb-3 justify-content-center">
-				<asp:TextBox ID="name" CssClass="form-control" placeholder="Nombre de propietario" Autofocus="autofocus"  runat="server" ></asp:TextBox>
+				<asp:TextBox ID="name" CssClass="form-control third" placeholder="Nombre de propietario" Autofocus="autofocus"  runat="server" ></asp:TextBox>
 			                    <br />
                                 <br />
 			    <asp:Label ID="Label2" CssClass="form-label" runat="server" Text="Tarjeta de Credito" Font-Bold="True"></asp:Label>
 				                <br />
                                 </div>
                             <div class="mb-3 justify-content-center">
-				<asp:TextBox ID="Cardnumber" CssClass="form-control" runat="server"  placeholder="0000 0000 0000 0000" data-mask="0000 0000 0000 0000"  onkeypress="return event.charCode >= 48 && event.charCode <= 57" ></asp:TextBox>
+				<asp:TextBox ID="Cardnumber" CssClass="form-control third" runat="server"  placeholder="0000 0000 0000 0000" data-mask="0000 0000 0000 0000"  onkeypress="return event.charCode >= 48 && event.charCode <= 57" ></asp:TextBox>
 				                <br />
                                 <br />
 				<asp:Label ID="Label3" CssClass="form-label" runat="server" Text="Fecha de vencimiento" Font-Bold="True"></asp:Label>
 		                        <br />
                                 </div>
                             <div class="mb-3 justify-content-center">
-		        <asp:TextBox ID="vence" CssClass="form-control" runat="server" placeholder="00  /  00" data-mask="00  /  00"  onkeypress="return event.charCode >= 48 && event.charCode <= 57"></asp:TextBox>
+		        <asp:TextBox ID="vence" CssClass="form-control third" runat="server" placeholder="00  /  00" data-mask="00  /  00"  onkeypress="return event.charCode >= 48 && event.charCode <= 57"></asp:TextBox>
 				                <br />
                                 <br />
 				<asp:Label ID="Label4" CssClass="form-label" runat="server" Text="CVC" Font-Bold="True"></asp:Label>
 	                            <br />
                                 </div>
                             <div class="mb-3 justify-content-center">
-	            <asp:TextBox ID="codigo" CssClass="form-control" placeholder="000" data-mask="000" runat="server"  onkeypress="return event.charCode >= 48 && event.charCode <= 57"></asp:TextBox>
+	            <asp:TextBox ID="codigo" CssClass="form-control third" placeholder="000" data-mask="000" runat="server"  onkeypress="return event.charCode >= 48 && event.charCode <= 57"></asp:TextBox>
                                 <br />
                                 <br />
                                 </div>
-                <asp:Button ID="btnBuy_Click" CssClass="btn btn-success" runat="server" Text="Comprar ahora" OnClick="btnBuy_Click_Click"/>
+                <asp:Button ID="btnBuy_Click" CssClass="buton third btn-success" runat="server" Text="Comprar ahora" OnClick="btnBuy_Click_Click"/>
                 <asp:Literal runat="server" ID ="Literal1" Text=""></asp:Literal>
                          </div> 
         <asp:HiddenField runat="server" id="userId"></asp:HiddenField>

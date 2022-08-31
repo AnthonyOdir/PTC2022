@@ -66,9 +66,6 @@
                 <a class="nav-link" href="Inicio.aspx"><%=gTranslate.Translate("Inicio") %></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="Carro.aspx"><%=gTranslate.Translate("Carros") %></a>
-              </li>
-              <li class="nav-item">
                 <a class="nav-link" href="Sobre_Nosotros.aspx"><%=gTranslate.Translate("Sobre Nosotros") %></a>
               </li>
               <li class="nav-item">
@@ -90,8 +87,8 @@
       <style>
         /* Make the image fully responsive */
         .carousel-inner img {
-            width: 30%;
-            height: 30%;
+            width: 40%;
+            height: 55%;
         }
     </style>
      <div id="demo" class="carousel slide" data-ride="carousel">

@@ -82,9 +82,6 @@
               <li class="nav-item ">
                 <a class="nav-link" href="Inicio.aspx">Inicio </a>
               </li>
-              <li class="nav-item ">
-                <a class="nav-link" href="Carro.aspx">Carros <span class="sr-only">(current)</span> </a>
-              </li>
               <li class="nav-item">
                 <a class="nav-link" href="crearproductos.aspx">Agregar carro</a>
               </li>

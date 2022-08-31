@@ -45,12 +45,40 @@
 
   <!-- Custom styles for this template -->
   <link href="css/style.css" rel="stylesheet" />
+    <link href="css/BTN.css" rel="stylesheet" />
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
 
 
 </head>
 <body>
+    <script type="text/javascript">
+        function validar(e) { // 1
+            tecla = (document.all) ? e.keyCode : e.which; // 2
+            if (tecla == 8) return true; // 3
+            patron = /[A-Za-z\s]/; // 4
+            te = String.fromCharCode(tecla); // 5
+            return patron.test(te); // 6
+        }
+    </script>
+    <script type="text/javascript">
+        function numeros(nu) { // 1
+            tecla = (document.all) ? e.keyCode : e.which; // 2
+            if (tecla == 8) return true; // 3
+            ppatron = /\d/; // Solo acepta números// 4
+            te = String.fromCharCode(tecla); // 5
+            return patron.test(te); // 6
+        }
+    </script>
+    <script type="text/javascript">   
+        document.addEventListener('keypress', ValidarNumero);
+        function ValidarNumero(numero) {
+            if ((event.keyCode < 100) || (event.keyCode > 0))
+                event.returnValue = true;
+            else
+                event.returnValue = false;
+        }
+    </script>
   <form id="form1" enctype="multipart/form-data" runat="server">
        <div class="hero_area">
     <div class="bg-box">
@@ -74,9 +102,6 @@
             <ul class="navbar-nav  mx-auto ">
               <li class="nav-item ">
                 <a class="nav-link" href="Inicio.aspx">Inicio </a>
-              </li>
-              <li class="nav-item ">
-                <a class="nav-link" href="Carro.aspx">Carros <span class="sr-only">(current)</span> </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="crearproductos.aspx">Agregar carro</a>
@@ -108,30 +133,30 @@
                             <hr />
                             <div class="mb-3">
                                 <asp:Label ID="LabelProduct" CssClass="form-label" runat="server" Text="Nombre del Carro" Font-Bold="True"></asp:Label>
-                                <asp:TextBox ID="Nombre" CssClass="form-control" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="Nombre" CssClass="form-control third" runat="server" onpaste="return false" onkeypress="return validar(event)"></asp:TextBox>
                             </div>
                             <div class="mb-3">
                                 <asp:Label ID="LabelModelo" CssClass="form-label" runat="server" Text="Modelo del Carro" Font-Bold="True"></asp:Label>
-                                <asp:TextBox ID="Modelo" CssClass="form-control" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="Modelo" CssClass="form-control third" runat="server" onpaste="return false" onkeypress="return validar(event)"></asp:TextBox>
                             </div>
                             <div class="mb-3">
                                 <asp:Label ID="LabelEstado" CssClass="form-label" runat="server" Text="Estado del Carro" Font-Bold="True"></asp:Label>
-                                <asp:TextBox ID="Estado" CssClass="form-control" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="Estado" CssClass="form-control third" runat="server" onpaste="return false" onkeypress="return validar(event)"></asp:TextBox>
                             </div>
                             <div class="mb-3">
                                 <asp:Label ID="LabelPrice" CssClass="form-label" runat="server" Text="Precio del Carro" Font-Bold="True"></asp:Label>
-                                <asp:TextBox ID="Price" CssClass="form-control" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="Price" CssClass="form-control third" runat="server" onkeypress="return event.charCode >= 48 && event.charCode <= 57" maxlength="4"></asp:TextBox>
                             </div>
                             <div class="mb-3">
                                 <asp:Label ID="LabelQty" CssClass="form-label" runat="server" Text="Cantidad Producto" Font-Bold="True"></asp:Label>
-                                <asp:TextBox ID="Quantity" CssClass="form-control" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="Quantity" CssClass="form-control third" runat="server" onkeypress="return event.charCode >= 48 && event.charCode <= 57" maxlength="2"></asp:TextBox>
                             </div>
                             <div class="mb-3">
                                 <asp:Label ID="LabelImage" CssClass="form-label" runat="server" Text="Imagen Producto" Font-Bold="True"></asp:Label>
-                                <asp:FileUpload ID="PhotoFile" CssClass="form-control" runat="server" />
+                                <asp:FileUpload ID="PhotoFile" CssClass="form-control third" runat="server" />
                             </div>
                             
-                            <asp:Button ID="Create" CssClass="btn btn-success" runat="server" Text="Crear" OnClick="Create_Click" />
+                            <asp:Button ID="Create" CssClass="buton third btn-success" runat="server" Text="Crear" OnClick="Create_Click" />
                               
                          </div>     
                      </div>   

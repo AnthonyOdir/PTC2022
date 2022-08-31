@@ -27,6 +27,7 @@
 
   <!-- Custom styles for this template -->
   <link href="css/style.css" rel="stylesheet" />
+    <link href="css/BTN.css" rel="stylesheet" />
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
 <script src="SweetAlert/sweetalert2.js"></script>
@@ -34,6 +35,34 @@
     <title>Agregar imagen</title>
 </head>
 <body>
+    <script type="text/javascript">
+        function validar(e) { // 1
+            tecla = (document.all) ? e.keyCode : e.which; // 2
+            if (tecla == 8) return true; // 3
+            patron = /[A-Za-z\s]/; // 4
+            te = String.fromCharCode(tecla); // 5
+            return patron.test(te); // 6
+        }
+    </script>
+    <script type="text/javascript">
+        function numeros(nu) { // 1
+            tecla = (document.all) ? e.keyCode : e.which; // 2
+            if (tecla == 8) return true; // 3
+            ppatron = /\d/; // Solo acepta números// 4
+            te = String.fromCharCode(tecla); // 5
+            return patron.test(te); // 6
+        }
+    </script>
+    <script type="text/javascript">   
+        document.addEventListener('keypress', ValidarNumero);
+        function ValidarNumero(numero) {
+            if ((event.keyCode < 100) || (event.keyCode > 0))
+                event.returnValue = true;
+            else
+                event.returnValue = false;
+        }
+    </script>
+
     <form id="form1" runat="server">
   <div class="hero_area">
     <div class="bg-box">
@@ -50,9 +79,6 @@
               </a>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav  mx-auto ">
-              <li class="nav-item ">
-                <a class="nav-link" href="Carros.aspx">Carros <span class="sr-only">(current)</span> </a>
-              </li>
                 <li class="nav-item">
                   <a class="nav-link" href="Inicio.aspx">Inicio </a>
               </li>
@@ -72,27 +98,33 @@
 
 
     </header>
-                                      <div class="row">
-                    <div class="col-sm-6 col-sm-offset-3 myform-cont">
-                        <h1>Agregar</h1>
-                        <div class="myform-top">
-                        </div>
-                        <div class="myform-bottom">
-                            <div role="form" action="" method="post" class="">
-                                <div class="form-group">
-                                    <asp:TextBox ID="TextoImagen" runat="server" placeholder="Texto" type="text" class="nav-link align-items-center justify-content-between" onpaste="return false" onkeypress="return validar(event)" minlength="1" ></asp:TextBox>
-                                </div>
-                                <div class="form-group">
-                                    <asp:Label ID="LabelFoto" runat="server" CssClass="nav-link align-items-center justify-content-between" Text="Foto"></asp:Label>
-                                    <asp:FileUpload ID="PhotoFile" CssClass="form-control align-items-center justify-content-between" name="File" runat="server" />
-                                </div>
-                                
-                                <asp:Button ID="btnAgregar" runat="server" Text="Agregar" CssClass="btn-box" OnClick="btnAgregar_Click"></asp:Button>
+ <div class="container">
+            <div class="row">
+                <div class="col-sm-6  m-auto">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Agregar</h5>
+                            <div class="myform-top">
+                                <asp:Image ID="ImagePreview" Width="90%" CssClass="py-3" runat="server" />
                             </div>
+                       <div class="myform-bottom">
+                                <div class="mb-3">
+                                    <asp:TextBox ID="TextoImagen" runat="server" placeholder="Texto" type="text" class="nav-link third align-items-center justify-content-between" onpaste="return false" onkeypress="return validar(event)"  ></asp:TextBox>
+                                </div>
+                                <div class="mb-3">
+                                <asp:Label ID="LabelFoto" runat="server" CssClass="nav-link align-items-center justify-content-between" Text="Foto"></asp:Label>
+                                    <asp:FileUpload ID="PhotoFile" CssClass="form-control third align-items-center justify-content-between" name="File" runat="server" />
+                                </div>
+                            <div class="mb-3">
+                                <asp:Button ID="btnAgregar" runat="server" Text="Agregar" CssClass="buton third btn-success" OnClick="btnAgregar_Click"></asp:Button>
+                            </div>
+                            
                         </div>
                     </div>
                 </div>
             </div>
+</div>
+    </div>
 
     </form>
   <asp:Literal ID="localStorageLiteral" runat="server" Text=""></asp:Literal>

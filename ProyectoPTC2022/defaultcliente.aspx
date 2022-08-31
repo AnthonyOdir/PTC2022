@@ -67,9 +67,6 @@
                 <a class="nav-link" href="defaulcliente.aspx"> <%=gTranslate.Translate("Inicio") %> </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="Carrocliente.aspx"><%=gTranslate.Translate("Carros") %> </a>
-              </li>
-              <li class="nav-item">
                 <asp:Button ID="btncerrar" class="nav-link" type="submit" runat="server" Text="Cerrar sesion" OnClick="btncerrar_Click" BackColor="transparent" BorderColor="Transparent"/>
               </li>
             </ul>
@@ -85,8 +82,8 @@
       <style>
         /* Make the image fully responsive */
         .carousel-inner img {
-            width: 30%;
-            height: 30%;
+            width: 40%;
+            height: 55%;
         }
     </style>
      <div id="demo" class="carousel slide" data-ride="carousel">
@@ -207,7 +204,7 @@
     <div class="container">
       <div class="heading_container heading_center psudo_white_primary mb_45">
         <h2>
-          Reseñas
+          <%=gTranslate.Translate("Reseñas") %>
         </h2>
       </div>
       <div class="carousel-wrap row ">
@@ -216,13 +213,13 @@
             <div class="box">
               <div class="detail-box">
                 <p>
-                  Es una pagina muy buena, me es muy funcional y me ayudo a comprarle el regalo de cumpleaños a mi ex novia.
+                  <%=gTranslate.Translate("Es una pagina muy buena, me es muy funcional y me ayudo a comprarle el regalo de cumpleaños a mi ex novia.") %> 
                 </p>
                 <h6>
-                  Jefferson Chiquito
+                  Jefferson
                 </h6>
                 <p>
-                  Lobo solitario
+                  <%=gTranslate.Translate("Usuario feliz.") %> 
                 </p>
               </div>
               <div class="img-box">
@@ -234,13 +231,13 @@
             <div class="box">
               <div class="detail-box">
                 <p>
-                  Me gusta mucho esta pagina, sus carros tienen precios accecibles y aqui fue donde mi ex novio me compro un carro.
+                  <%=gTranslate.Translate("Me gusta mucho esta pagina, sus carros tienen precios accecibles y aqui fue donde mi ex novio me compro un carro.") %> 
                 </p>
                 <h6>
-                  Valentina Martinez
+                  Valentina
                 </h6>
                 <p>
-                  Elamordemibida
+                  <%=gTranslate.Translate("Usuario satisfecho.") %>
                 </p>
               </div>
               <div class="img-box">
@@ -289,7 +286,7 @@
         <div class="col-md-4 footer-col">
           <div class="footer_detail">
             <a href="" class="footer-logo">
-              bigcar.png
+              bigcar
             </a>
             <p>
               Necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with

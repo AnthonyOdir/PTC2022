@@ -138,6 +138,7 @@
     <Content Include="CSS\bootstrap-reboot.min.css" />
     <Content Include="CSS\bootstrap.css" />
     <Content Include="CSS\bootstrap.min.css" />
+    <Content Include="CSS\BTN.css" />
     <Content Include="CSS\font-awesome.min.css" />
     <Content Include="CSS\Login.css" />
     <Content Include="CSS\loginD.css" />

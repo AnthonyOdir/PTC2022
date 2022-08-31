@@ -80,7 +80,7 @@ namespace ProyectoPTC2022
                     else {
                         alert.Text = 
                             $"<script>" +
-                                $"Swal.fire('Error', 'No hay stock suficiente para completar esta acción.', 'error').then((value) => {{{ JsService.ReplaceLocation("defaultcliente.aspx")}}});" +
+                                $"Swal.fire('Error', 'El carro ya fue comprado por alguien mas, intente con otro', 'error').then((value) => {{{ JsService.ReplaceLocation("defaultcliente.aspx")}}});" +
                             $"</script>";
                     }
                     conexion.Close();

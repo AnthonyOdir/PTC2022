@@ -59,7 +59,7 @@ namespace ProyectoPTC2022
 
             foreach (DataRow row in products.Rows)
             {
-                template += "<div class='col-sm-6 col-lg-4 all ENTRADA'>" +
+                template += "<div class='col-sm-6 col-lg-4 all PESADOS ENTRADA CASI_NUEVOS MUY_USADOS'>" +
                                 "<div class='box'>" +
                                 "<img  height='100%' width='100%' src='images/" + row["Image"] + "'/>" +
                                     "<div class='detail-box'>" + " <h5>" +
