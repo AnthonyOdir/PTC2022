@@ -33,10 +33,11 @@
   <link href="css/responsive.css" rel="stylesheet" />
 
         <link href="EstilosCss/EstiloInicio.css" rel="stylesheet" />
+        <link href="EstilosCss/Main.css" rel="stylesheet" />
 
 </head>
 
-<body>
+<body class="sub_page">
     <form id="form1" runat= "server">
 
   <div class="hero_area">
@@ -59,14 +60,17 @@
 
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav  mx-auto ">
+                 <li class="nav-item">
+	            <asp:Button ID="btn_idioma" class="nav-link" type="submit" runat="server" Text="" BackColor="transparent" BorderColor="Transparent" OnClick="btn_idioma_Click" />
+              </li>
               <li class="nav-item active">
-                <a class="nav-link" href="Inicio.aspx">Inicio </a>
+                <a class="nav-link" href="defaulcliente.aspx"> <%=gTranslate.Translate("Inicio") %> </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="Carro.aspx">Carros <span class="sr-only">(current)</span> </a>
+                <a class="nav-link" href="Carrocliente.aspx"><%=gTranslate.Translate("Carros") %> </a>
               </li>
               <li class="nav-item">
-                <asp:Button ID="btncerrar" class="nav-link" type="submit" runat="server" Text="Cerrar sesion" OnClick="btncerrar_Click" BackColor="Black" />
+                <asp:Button ID="btncerrar" class="nav-link" type="submit" runat="server" Text="Cerrar sesion" OnClick="btncerrar_Click" BackColor="transparent" BorderColor="Transparent"/>
               </li>
             </ul>
           </div>
@@ -128,16 +132,16 @@
     <div class="container">
       <div class="heading_container heading_center">
         <h2>
-          Categorias
+          <%=gTranslate.Translate("Categorias") %>
         </h2>
       </div>
         
       <ul class="filters_menu">
-        <li class="active" data-filter="*">Todos</li>
-        <li data-filter=".PESADOS">Carros Pesados</li>
-        <li data-filter=".ENTRADA">Carros de entrada</li>
-        <li data-filter=".CASI_NUEVOS">Casi Nuevos</li>
-        <li data-filter=".MUY_USADOS">Muy usado</li> 
+        <li class="translate active" data-filter="*"><%=gTranslate.Translate("Todos") %></li>
+        <li class="translate" data-filter=".PESADOS"><%=gTranslate.Translate("Carros Pesados") %></li>
+        <li class="translate" data-filter=".ENTRADA"><%=gTranslate.Translate("Carros de Entrada") %></li>
+        <li class="translate" data-filter=".CASI_NUEVOS"><%=gTranslate.Translate("Casi Nuevos") %></li>
+        <li class="translate" data-filter=".MUY_USADOS"><%=gTranslate.Translate("Muy Usados") %></li> 
       </ul>
 
       <div class="filters-content">
@@ -170,14 +174,14 @@
           <div class="detail-box">
             <div class="heading_container">
               <h2>
-                Somos Big Car
+                <%=gTranslate.Translate("Nosotros somos") %> Big Car
               </h2>
             </div>
             <p>
-              Tratamos de proporcionarle carros de segunda mano de buena calidad, para que usted tenga
-              una experiencia amistosa sin tener el miedo de que algun carro tenga defectos, le aseguramos 
-              con seguridad que su carro tendra una buena calidad y podra disfrutar de las vetanjas que este
-              le ofrece, tenemos la obligacion de darle una experiencia agradable y segura en nuestra plataforma
+            <%=gTranslate.Translate("Tratamos de proporcionarle carros de segunda mano de buena calidad, para que usted tenga") %>
+            <%=gTranslate.Translate( "una experiencia amistosa sin tener el miedo de que algun carro tenga defectos, le aseguramos" ) %>
+            <%=gTranslate.Translate("con seguridad que su carro tendra una buena calidad y podra disfrutar de las vetanjas que este") %>
+            <%=gTranslate.Translate("le ofrece, tenemos la obligacion de darle una experiencia agradable y segura en nuestra plataforma") %>
             </p>
           </div>
         </div>
